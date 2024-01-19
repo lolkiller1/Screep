@@ -16,10 +16,10 @@ module.exports = {
 			util.gatherFromEnergy(name)
 		} else {
 			var spot = Game.spawns["E5N57"]
-			if (creep.pos.getRangeTo(spot) > 1) {
-				creep.moveTo(spot)
+			if (name.pos.getRangeTo(spot) > 1) {
+				name.moveTo(spot)
 			} else {
-				creep.transfer(spot, RESOURCE_ENERGY)
+				name.transfer(spot, RESOURCE_ENERGY)
 			}
 		}
 		
