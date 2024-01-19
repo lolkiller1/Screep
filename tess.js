@@ -24,5 +24,3 @@ module.exports = {
 	}
 	
 }
-
-var status = creep.
