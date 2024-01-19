@@ -2,7 +2,7 @@ var util = require("util")
 var tess = require("tess")
 
 for(const i in Game.creeps) {
-    
+    console.log(Game.creeps[i])
 	if (Game.creeps[i].name == "tess") {
 		tess.run(Game.creeps[i])
 	}
