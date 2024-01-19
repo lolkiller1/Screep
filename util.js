@@ -21,7 +21,7 @@ module.exports = {
 		
 		return array
 	},
-	// spawnCreep("name", {m:2,w:1:c:1}, {}, 'E5N56')
+	// util.spawnCreep("name", {m:2,w:1,c:1}, {}, 'E5N57');
 	spawnCreep(name, body, mem, spawn) {
 		var body = this.getBodyArray(body)
 		console.log(spawn + " " + body + " " + name + " " + mem)
