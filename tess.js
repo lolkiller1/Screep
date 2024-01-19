@@ -15,11 +15,11 @@ module.exports = {
 		if (tess.memory.status == "harvesting") {
 			util.gatherFromEnergy(tess)
 		} else {
-			var spot = creep.room.controller 
-			if (creep.pos.getRangeTo(spot) > 1) {
-				creep.moveTo(spot)
+			var spot = tess.room.controller 
+			if (tess.pos.getRangeTo(spot) > 1) {
+				tess.moveTo(spot)
 			} else {
-				creep.upgradeController(spot)
+				tess.upgradeController(spot)
 			}
 		}
 		
