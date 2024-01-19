@@ -1,7 +1,7 @@
 var util = require("util")
 
 module.exports = {
-	var run(tess){
+	run(tess){
 		var storageStatus = util.getCreepStorageStatus(tess)
 		
 		if (storageStatus == "FULL" && tess.memory.status == "harvesting") {
