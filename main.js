@@ -42,5 +42,5 @@ util.spawnCreep("name2", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess2", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess3", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
-
-console.log("new test")
+util.spawnCreep("tess4", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("tess5", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
