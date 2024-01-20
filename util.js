@@ -36,8 +36,14 @@ module.exports = {
 			return "MID"
 		}
 	},
-	gatherFromEnergy(creep) {
-		var energy = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE)
+	gatherFromEnergy(creep, spot) {
+		var energy
+		if (spot) {
+			energy = Game.getObjectById(spot)
+		} else {
+			energy = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE)
+		}
+		
 		if (creep.pos.getRangeTo(energy) > 1) {
 			creep.moveTo(energy)
 		} else {
