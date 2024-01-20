@@ -44,10 +44,19 @@ for(const i in Memory.creeps) {
 		}
 	}
 	
+	if (Game.creeps[i].name == "name3") {
+		if (Game.spawns["E5N57"].store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+			name.run(Game.creeps[i])
+		} else {
+			builder.run(Game.creeps[i])
+		}
+	}
+	
 }
 
 util.spawnCreep("name", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name2", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("name3", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess2", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess3", {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
