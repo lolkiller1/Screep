@@ -19,6 +19,14 @@ for(const i in Memory.creeps) {
 		tess.run(Game.creeps[i])
 	}
 	
+	if (Game.creeps[i].name == "tess4") {
+		tess.run(Game.creeps[i])
+	}
+	
+	if (Game.creeps[i].name == "tess5") {
+		tess.run(Game.creeps[i])
+	}
+	
 	if (Game.creeps[i].name == "name") {
 		name.run(Game.creeps[i])
 	}
