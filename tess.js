@@ -16,7 +16,7 @@ module.exports = {
 			util.gatherFromEnergy(tess)
 		} else {
 			var spot = tess.room.controller 
-			if (tess.pos.getRangeTo(spot) > 1) {
+			if (tess.pos.getRangeTo(spot) > 3) {
 				tess.moveTo(spot)
 			} else {
 				tess.upgradeController(spot)
