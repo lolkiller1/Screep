@@ -1,6 +1,7 @@
 var util = require("util")
 var tess = require("tess")
 var name = require("name")
+var builder = require("builder")
 
 for(const i in Memory.creeps) {
     if (Game.creeps[i] == undefined) {
@@ -32,7 +33,12 @@ for(const i in Memory.creeps) {
 	}
 	
 	if (Game.creeps[i].name == "name2") {
-		name.run(Game.creeps[i])
+		if (Game.spawns["E5N57"].store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+			name.run(Game.creeps[i])
+		} else {
+			builder.run(Game.creeps[i])
+		}
+		
 	}
 	
 }

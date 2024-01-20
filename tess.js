@@ -10,8 +10,6 @@ module.exports = {
 			tess.memory.status = "harvesting"
 		}
 		
-		console.log(storageStatus)
-		
 		if (tess.memory.status == "harvesting") {
 			util.gatherFromEnergy(tess)
 		} else {

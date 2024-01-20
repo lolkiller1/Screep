@@ -43,7 +43,9 @@ module.exports = {
 		} else {
 			creep.harvest(energy)
 		}
+	},
+	findClosestBuildable(creep) {
+	    return creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES)
 	}
-	
 	
 }

@@ -1,4 +1,4 @@
- var util = require("util")
+var util = require("util")
 
 module.exports = {
 	run(name){
@@ -9,8 +9,6 @@ module.exports = {
 		} else if (storageStatus == "EMPTY" && name.memory.status == "working") {
 			name.memory.status = "harvesting"
 		}
-		
-		console.log(storageStatus)
 		
 		if (name.memory.status == "harvesting") {
 			util.gatherFromEnergy(name)
