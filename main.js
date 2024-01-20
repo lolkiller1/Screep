@@ -3,6 +3,11 @@ var tess = require("tess")
 var name = require("name")
 var builder = require("builder")
 
+if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
+	console.log("oh no")
+	//Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
+}
+
 for(const i in Memory.creeps) {
     if (Game.creeps[i] == undefined) {
         delete Memory.creeps[i]
