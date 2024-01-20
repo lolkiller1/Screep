@@ -25,7 +25,7 @@ module.exports = {
 	spawnCreep(name, body, mem, spawn) {
 		var body = this.getBodyArray(body)
 		//console.log(spawn + " " + body + " " + name + " " + mem)
-		//console.log(Game.spawns[spawn].spawnCreep(body, name, {memory:mem}))
+		console.log(Game.spawns[spawn].spawnCreep(body, name, {memory:mem}))
 	},
 	getCreepStorageStatus(creep) {
 		if (creep.store.getFreeCapacity() == 0) {
