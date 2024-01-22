@@ -22,7 +22,7 @@ module.exports = {
 					name.transfer(spot, RESOURCE_ENERGY)
 				}
 			} else {
-				var extensions = name.pos.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
+				var extensions = name.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 				extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 				spot = name.pos.findClosestByPath(extensions)
 				if (name.pos.getRangeTo(spot) > 1) {
