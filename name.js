@@ -23,7 +23,7 @@ module.exports = {
 				}
 			} else {
 				var extensions = creep.pos.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
-				extensions = _.filter(extensions, funtion(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
+				extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 				spot = name.pos.findClosestByPath(extensions)
 				if (name.pos.getRangeTo(spot) > 1) {
 					name.moveTo(spot)
