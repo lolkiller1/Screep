@@ -1,4 +1,5 @@
 var util = require("util")
+var _ = require("lodash")
 
 module.exports = {
 	run(name){
@@ -14,11 +15,23 @@ module.exports = {
 			util.gatherFromEnergy(name)
 		} else {
 			var spot = Game.spawns["E5N57"]
-			if (name.pos.getRangeTo(spot) > 1) {
-				name.moveTo(spot)
+			if (spot.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+				if (name.pos.getRangeTo(spot) > 1) {
+					name.moveTo(spot)
+				} else {
+					name.transfer(spot, RESOURCE_ENERGY)
+				}
 			} else {
-				name.transfer(spot, RESOURCE_ENERGY)
-			}
+				var extensions = creep.pos.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
+				extensions = _.filter(extensions, funtion(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
+				spot = name.pos.findClosestByPath(extensions)
+				if (name.pos.getRangeTo(spot) > 1) {
+					name.moveTo(spot)
+				} else {
+					name.transfer(spot, RESOURCE_ENERGY)
+				}
+			}			
+			
 		}
 		
 	}
