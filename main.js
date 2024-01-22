@@ -45,7 +45,7 @@ for(const i in Memory.creeps) {
 	}
 	
 	if (Game.creeps[i].name == "name") {
-		if (creep.room.energyAvailable < creep.room.energyCapacityAvailable) {
+		if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
 			name.run(Game.creeps[i])
 		} else {
 			builder.run(Game.creeps[i])
@@ -53,8 +53,7 @@ for(const i in Memory.creeps) {
 	}
 	
 	if (Game.creeps[i].name == "name2") {
-		
-		if (creep.room.energyAvailable < creep.room.energyCapacityAvailable) {
+		if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
 			name.run(Game.creeps[i])
 		} else {
 			builder.run(Game.creeps[i])
