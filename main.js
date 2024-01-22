@@ -61,11 +61,7 @@ for(const i in Memory.creeps) {
 	}
 	
 	if (Game.creeps[i].name == "name3") {
-		if (Game.spawns["E5N57"].store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
-			name.run(Game.creeps[i])
-		} else {
-			builder.run(Game.creeps[i])
-		}
+		name.run(Game.creeps[i])
 	}
 	
 }
