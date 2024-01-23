@@ -11,7 +11,7 @@ if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 
 var myTower = Game.getObjectById("65ae09ade53e4a11e1675b1e")
 
-tower.run()
+tower.run(myTower)
 
 for(const i in Memory.creeps) {
     if (Game.creeps[i] == undefined) {
