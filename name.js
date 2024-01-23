@@ -12,7 +12,7 @@ module.exports = {
 		}
 		
 		if (name.memory.status == "harvesting") {
-			util.gatherFromEnergy(name)
+			util.gatherFromSpot(name, 31, 7)
 		} else {
 			var spot = Game.spawns["E5N57"]
 			if (spot.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {

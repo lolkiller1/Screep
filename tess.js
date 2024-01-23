@@ -11,7 +11,7 @@ module.exports = {
 		}
 		
 		if (tess.memory.status == "harvesting") {
-			util.gatherFromSpot(tess, 36, 10)
+			util.gatherFromSpot(tess, 35, 10)
 		} else {
 			var spot = tess.room.controller 
 			if (tess.pos.getRangeTo(spot) > 3) {
