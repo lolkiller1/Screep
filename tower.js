@@ -12,8 +12,6 @@ module.exports = {
 			if (roads[0]) {
 				tower.repair(road)
 			}
-			
-});
 		}
 	}
 	
