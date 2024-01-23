@@ -20,7 +20,5 @@ module.exports = {
 				creep.transfer(spot, RESOURCE_ENERGY)
 			}
 		}
-		
 	}
-	
 }

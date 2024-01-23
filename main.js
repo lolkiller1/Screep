@@ -4,6 +4,7 @@ var name = require("name")
 var tower = require("tower")
 var filler = require("filler")
 var builder = require("builder")
+var miner = require("miner")
 
 if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 	Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
@@ -77,6 +78,10 @@ for(const i in Memory.creeps) {
 				builder.run(Game.creeps[i])
 			}
 		}
+		
+		if (Game.creeps[i].name == "miner1") {
+			miner.run(Game.creeps[i])
+		}
 	
 	} catch (error) {
 		console.log("Error: " + error)
@@ -96,3 +101,4 @@ util.spawnCreep("tess8", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name",  {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name2", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name3", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("miner1", {m:3,w:5}, {source:"5bbcad319099fc012e636ce8", spot:{x:36,y:10}}, 'E5N57')
