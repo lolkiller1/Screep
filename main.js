@@ -82,6 +82,10 @@ for(const i in Memory.creeps) {
 		if (Game.creeps[i].name == "miner1") {
 			miner.run(Game.creeps[i])
 		}
+		
+		if (Game.creeps[i].name == "miner2") {
+			miner.run(Game.creeps[i])
+		}
 	
 	} catch (error) {
 		console.log("Error: " + error)
