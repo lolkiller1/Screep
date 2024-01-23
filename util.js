@@ -51,6 +51,16 @@ module.exports = {
 			creep.harvest(energy)
 		}
 	},
+	gatherFromSpot(creep, x, y) {
+		if (creep.pos.getRangeTo(x,y) > 1) {
+			creep.moveTo(x,y)
+		} else {
+			var spot = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES)
+			if (spot) {
+				creep.pickup(spot)
+			}
+		}
+	},
 	findClosestBuildable(creep) {
 	    return creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES)
 	}
