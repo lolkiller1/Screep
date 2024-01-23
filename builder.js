@@ -14,7 +14,7 @@ module.exports = {
 			util.gatherFromSpot(creep, 31, 7)
 		} else {
 			var spot = util.findClosestBuildable(creep)
-			if (creep.pos.getRangeTo(spot) > 3) {
+			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
 			} else {
 				creep.build(spot)
