@@ -14,47 +14,51 @@ var myTower = Game.getObjectById("65ae09ade53e4a11e1675b1e")
 tower.run(myTower)
 
 for(const i in Memory.creeps) {
-    if (Game.creeps[i] == undefined) {
-        delete Memory.creeps[i]
-    }
+	try {
+		if (Game.creeps[i] == undefined) {
+			delete Memory.creeps[i]
+		}
 
-	if (Game.creeps[i].name == "tess") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess2") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess2") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess3") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess3") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess4") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess4") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess5") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess5") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess6") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess6") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess7") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess7") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "tess8") {
-		tess.run(Game.creeps[i])
-	}
+		if (Game.creeps[i].name == "tess8") {
+			tess.run(Game.creeps[i])
+		}
 	
-	if (Game.creeps[i].name == "name") {
-		if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
-			name.run(Game.creeps[i])
-		} else {
-			builder.run(Game.creeps[i])
+		if (Game.creeps[i].name == "name") {
+			if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
+				name.run(Game.creeps[i])
+			} else {
+				builder.run(Game.creeps[i])
+			}
+		} catch (error) {
+			console.log("Error: " + error)
 		}
 	}
 	
