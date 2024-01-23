@@ -52,7 +52,7 @@ module.exports = {
 		}
 	},
 	gatherFromSpot(creep, x, y) {
-		if (creep.pos.getRangeTo(x,y) > 1) {
+		if (creep.pos.getRangeTo(x,y) > 0) {
 			creep.moveTo(x,y)
 		} else {
 			var spot = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES)
