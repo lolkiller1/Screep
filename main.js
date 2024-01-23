@@ -57,9 +57,10 @@ for(const i in Memory.creeps) {
 			} else {
 				builder.run(Game.creeps[i])
 			}
-		} catch (error) {
-			console.log("Error: " + error)
-		}
+		
+			}
+	} catch (error) {
+		console.log("Error: " + error)
 	}
 	
 	if (Game.creeps[i].name == "name2") {
