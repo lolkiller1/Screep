@@ -13,7 +13,7 @@ module.exports = {
 		if (creep.memory.status == "harvesting") {
 			util.gatherFromEnergy(creep)
 		} else {
-			var spot = "tower"
+			var spot = "65ae09ade53e4a11e1675b1e"
 			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
 			} else {

@@ -1,11 +1,17 @@
 var util = require("util")
 var tess = require("tess")
 var name = require("name")
+var tower = require("tower")
+var filler = require("filler")
 var builder = require("builder")
 
 if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 	Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
 }
+
+var myTower = Game.getObjectById("65ae09ade53e4a11e1675b1e")
+
+tower.run()
 
 for(const i in Memory.creeps) {
     if (Game.creeps[i] == undefined) {
@@ -61,7 +67,7 @@ for(const i in Memory.creeps) {
 	}
 	
 	if (Game.creeps[i].name == "name3") {
-		name.run(Game.creeps[i])
+		filler.run(Game.creeps[i])
 	}
 	
 }
