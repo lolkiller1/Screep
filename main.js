@@ -79,10 +79,10 @@ for(const i in Memory.creeps) {
 	
 }
 
-util.spawnCreep("name", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("name",  {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name2", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name3", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("tess", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("tess",  {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess2", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess3", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess4", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
