@@ -67,7 +67,14 @@ for(const i in Memory.creeps) {
 	}
 	
 	if (Game.creeps[i].name == "name3") {
-		filler.run(Game.creeps[i])
+		if (Game.getObjectById("65ae09ade53e4a11e1675b1e").store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+			filler.run(Game.creeps[i])
+		} else if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
+			name.run(Game.creeps[i])
+		} else {
+			builder.run(Game.creeps[i])
+		}
+		
 	}
 	
 }
