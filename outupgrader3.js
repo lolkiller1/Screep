@@ -29,9 +29,11 @@ module.exports = {
 		}
 		
 		if (creep.memory.status == "harvesting") {
+			console.log("here")
 			util.gatherFromEnergy()
 		} else {
-			var spot = creep.room.controller 
+			var spot = creep.room.controller
+			console.log("here2")
 			if (creep.pos.getRangeTo(spot) > 3) {
 				creep.moveTo(spot)
 			} else {
