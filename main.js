@@ -8,6 +8,7 @@ var miner = require("miner")
 var claimer = require("claimer")
 var outUpgrader = require("outUpgrader")
 var outUpgrader2 = require("outUpgrader2")
+var outUpgrader3 = require("outUpgrader3")
 
 if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 	Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
@@ -101,6 +102,10 @@ for(const i in Memory.creeps) {
 		if (Game.creeps[i].name == "outUpgrader2") {
 			outUpgrader2.run(Game.creeps[i])
 		}
+		
+		if (Game.creeps[i].name == "outUpgrader3") {
+			outUpgrader3.run(Game.creeps[i])
+		}
 	
 	} catch (error) {
 		console.log("Error: " + error)
@@ -111,6 +116,7 @@ for(const i in Memory.creeps) {
 
 util.spawnCreep("outUpgrader",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("outUpgrader2",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("outUpgrader3",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess",  {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess2", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess3", {m:4,w:2,c:2}, {status:"harvesting"}, 'E5N57')
