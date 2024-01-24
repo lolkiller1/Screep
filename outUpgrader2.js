@@ -1,7 +1,7 @@
 var util = require("util")
 
 module.exports = {
-	run(tess){
+	run(creep){
 		
 		if (creep.room.name != "E6N58") {
 			if (creep.room.name == "E5N57") creep.moveTo(new RoomPosition(0, 14, 'E5N57'))
@@ -19,22 +19,22 @@ module.exports = {
 		
 		
 		
-		var storageStatus = util.getCreepStorageStatus(tess)
+		var storageStatus = util.getCreepStorageStatus(creep)
 		
-		if (storageStatus == "FULL" && tess.memory.status == "harvesting") {
-			tess.memory.status = "working"
-		} else if (storageStatus == "EMPTY" && tess.memory.status == "working") {
-			tess.memory.status = "harvesting"
+		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
+			creep.memory.status = "working"
+		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
+			creep.memory.status = "harvesting"
 		}
 		
-		if (tess.memory.status == "harvesting") {
+		if (creep.memory.status == "harvesting") {
 			util.gatherFromEnergy()
 		} else {
-			var spot = tess.room.controller 
-			if (tess.pos.getRangeTo(spot) > 3) {
-				tess.moveTo(spot)
+			var spot = creep.room.controller 
+			if (creep.pos.getRangeTo(spot) > 3) {
+				creep.moveTo(spot)
 			} else {
-				tess.upgradeController(spot)
+				creep.upgradeController(spot)
 			}
 		}
 		
