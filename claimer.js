@@ -12,7 +12,7 @@ module.exports = {
 		if (creep.room.name == "E6N60") creep.moveTo(new RoomPosition(25, 20, "E6N59"))
 			
 		if (creep.room.name == "E6N59") {
-			var ob = Game.room.E6N59.controllers
+			var ob = Game.room.E6N59.controller
 			creep.moveTo(ob)
 			creep.claim(ob)
 		}
