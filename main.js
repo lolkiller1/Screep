@@ -5,6 +5,7 @@ var tower = require("tower")
 var filler = require("filler")
 var builder = require("builder")
 var miner = require("miner")
+var claimer = require("claimer")
 
 if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 	Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
@@ -85,6 +86,10 @@ for(const i in Memory.creeps) {
 		
 		if (Game.creeps[i].name == "miner2") {
 			miner.run(Game.creeps[i])
+		}
+		
+		if (Game.creeps[i].name == "claimer") {
+			claimer.run(Game.creeps[i])
 		}
 	
 	} catch (error) {
