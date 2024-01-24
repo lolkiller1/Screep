@@ -1,6 +1,7 @@
 module.exports = {
 	run(creep){
-		if (creep.room.name == "E5N57") creep.moveTo(Game.rooms["E4N57"])
+		console.log(creep.room.name)
+		if (creep.room.name == "E5N57") console.log(creep.moveTo(Game.rooms["E4N57"]))
 		if (creep.room.name == "E4N57") creep.moveTo(Game.rooms["E4N58"])
 		if (creep.room.name == "E4N58") creep.moveTo(Game.rooms["E3N58"])
 		if (creep.room.name == "E3N58") creep.moveTo(Game.rooms["E3N59"])
