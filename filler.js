@@ -11,7 +11,7 @@ module.exports = {
 		}
 		
 		if (creep.memory.status == "harvesting") {
-			util.gatherFromSpot(creep, 30, 6)
+			util.gatherFromSpot(creep, 31, 7)
 		} else {
 			var spot = Game.getObjectById("65ae09ade53e4a11e1675b1e")
 			if (creep.pos.getRangeTo(spot) > 1) {
