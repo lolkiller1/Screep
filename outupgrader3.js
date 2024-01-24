@@ -30,7 +30,7 @@ module.exports = {
 		
 		if (creep.memory.status == "harvesting") {
 			console.log("here")
-			util.gatherFromEnergy()
+			util.gatherFromEnergy(creep)
 		} else {
 			var spot = creep.room.controller
 			console.log("here2")
