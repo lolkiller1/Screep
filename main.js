@@ -104,6 +104,7 @@ for(const i in Memory.creeps) {
 		}
 		
 		if (Game.creeps[i].name == "outUpgrader3") {
+			console.log("here3")
 			outUpgrader3.run(Game.creeps[i])
 		}
 	
