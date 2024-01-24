@@ -14,7 +14,7 @@ module.exports = {
 		if (creep.room.name == "E6N59") {
 			var ob = Game.room.E6N59.controller
 			creep.moveTo(ob)
-			creep.claim(ob)
+			creep.claimController(ob)
 		}
 	}
 }
