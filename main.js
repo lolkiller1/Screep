@@ -100,6 +100,10 @@ for(const i in Memory.creeps) {
 		if (Game.creeps[i].name == "outUpgrader3") {
 			outUpgrader3.run(Game.creeps[i])
 		}
+		
+		if (Game.creeps[i].name == "tempFiller") {
+			filler.run(Game.creeps[i])
+		}
 	
 	} catch (error) {
 		console.log("Error: " + error)
