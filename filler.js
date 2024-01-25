@@ -1,4 +1,5 @@
 var util = require("util")
+var _ = require("lodash")
 
 module.exports = {
 	run(creep){
@@ -11,7 +12,10 @@ module.exports = {
 		}
 		
 		if (creep.memory.status == "harvesting") {
-			var spot = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES)
+			var spot = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {filter: function(ob){return ob.resourceType == RESOURCE_ENERGY && ob.amount > 150}})
+			
+			if (!spot) return
+			
 			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
 			} else {
