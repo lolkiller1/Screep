@@ -25,6 +25,12 @@ module.exports = {
 				var extensions = name.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 				extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 				spot = name.pos.findClosestByPath(extensions)
+				
+				if (!spot) {
+					creep.memory.status = "harvesting"
+					return
+				}
+				
 				if (name.pos.getRangeTo(spot) > 1) {
 					name.moveTo(spot)
 				} else {
