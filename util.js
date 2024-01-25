@@ -61,6 +61,14 @@ module.exports = {
 			}
 		}
 	},
+	gatherFromStorage(creep){
+		var storage = creep.room.storage
+		if (creep.pos.getRangeTo(storage) > 1) {
+			creep.moveTo(storage)
+		} else {
+			creep.withdraw(storage, RESOURCE_ENERGY)
+		}
+	},
 	findClosestBuildable(creep) {
 	    return creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES)
 	}
