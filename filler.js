@@ -31,6 +31,12 @@ module.exports = {
 				return
 			}
 			
+			tower = Game.getObjectById("65b198c63d017d635f88c752")
+			if (tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+				creep.moveTo(tower)
+				creep.transfer(tower, RESOURCE_ENERGY)
+				return
+			}
 			
 			var storage = creep.room.storage
 			if (creep.pos.getRangeTo(storage) > 1) {
