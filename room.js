@@ -12,7 +12,7 @@ module.exports = {
 			if (upgrader) {
 				roomUpgrader.run(creep)
 			} else {
-				util.spawnCreep(roomName + "_Upgrader",{m:2,c:1,w:1},{status:harvesting},roomName)
+				util.spawnCreep(roomName + "_Upgrader",{m:2,c:1,w:1},{status:"harvesting"},roomName)
 			}
 		}
 	}
