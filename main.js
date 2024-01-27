@@ -128,16 +128,19 @@ for(const i in Memory.creeps) {
 	
 }
 
-
+/*
 util.spawnCreep("outUpgrader",  {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("outUpgrader2",  {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("outUpgrader3",  {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("outUpgraderB",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
+*/
 util.spawnCreep("outUpgrader2B",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
+/*
 util.spawnCreep("outUpgrader3B",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
+*/
+
 util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
-
 util.spawnCreep("name",  {m:7,w:1,c:6}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name2", {m:7,w:1,c:6}, {status:"harvesting"}, 'E5N57')
 //util.spawnCreep("name",  {m:11,w:3,c:8}, {status:"harvesting"}, 'E5N57')
