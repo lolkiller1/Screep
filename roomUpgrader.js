@@ -27,9 +27,6 @@ module.exports = {
 					creep.upgrade(creep.room.controller)
 				}
 			}
-			
-			
-			
 		}
 	}
 }
