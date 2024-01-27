@@ -19,6 +19,10 @@ var myTower = Game.getObjectById("65ae09ade53e4a11e1675b1e")
 
 tower.run(myTower)
 
+room.run("E6N59")
+room.run("E6N58")
+room.run("E6N57")
+
 for(const i in Memory.creeps) {
 	try {
 		if (Game.creeps[i] == undefined) {
