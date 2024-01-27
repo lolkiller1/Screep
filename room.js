@@ -17,7 +17,7 @@ module.exports = {
 					creep.harvest(energy)
 				}
 			} else {
-				util.spawnCreep(roomName + "_Miner",room.energyAvailable >= 500 ? {m:2,w:4} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Miner",room.energyAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
 			}
 			
 			var upgrader = Game.creeps[roomName + "_Upgrader"]
