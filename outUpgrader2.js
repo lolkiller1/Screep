@@ -28,6 +28,18 @@ module.exports = {
 		}
 		
 		if (creep.memory.status == "harvesting") {
+			var ruin = util.findClosestRuin(creep)
+			if (ruin) {
+				creep.moveTo(ruin)
+				creep.withdraw(ruin, RESOURCE_ENERGY)
+				return
+			}
+			var drop = util.findClosestDrop(creep)
+			if (drop) {
+				creep.moveTo(drop)
+				creep.pickup(drop)
+				return
+			}
 			util.gatherFromEnergy(creep)
 		} else {
 			var spot = creep.room.controller 
