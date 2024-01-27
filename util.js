@@ -71,6 +71,19 @@ module.exports = {
 	},
 	findClosestBuildable(creep) {
 	    return creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES)
+	},
+	findClosestRuin(creep) {
+		return creep.pos.findClosestByPath(FIND_RUINS, 
+			{filter: function(ob){return ob.store.getUsedCapacity(RESOURCE_ENERGY) > 200}})
+	},
+	findClosestDrop(creep) {
+		return creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, 
+			{filter: function(ob){return ob.resourceType == RESOURCE_ENERGY && ob.amount > 200}})
+	},
+	findClosestExtensionInNeed(creep){
+		var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
+		extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
+		return creep.pos.findClosestByPath(extensions)
 	}
 	
 }
