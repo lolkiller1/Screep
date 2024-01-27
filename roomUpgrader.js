@@ -11,7 +11,16 @@ module.exports = {
 		}
 		
 		if (creep.memory.status == "harvesting") {
-			util.gatherFromEnergy(creep)
+			var drop = util.findClosestDrop(creep)
+			if (drop) {
+				if (creep.pos.getRangeTo(drop) > 1){
+					creep.moveTo(drop)
+				} else {
+					creep.pickup(drop)
+				}
+			} else {
+				util.gatherFromEnergy(creep)
+			}
 		} else {
 			var spawn = Game.spawns[creep.room.name]
 			var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
