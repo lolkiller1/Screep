@@ -19,7 +19,7 @@ module.exports = {
 				creep.moveTo(ob)
 				creep.claimController(ob)
 			} else {
-				creep.moveTo(new RoomPosition(28, 49, "E7N58")
+				creep.moveTo(new RoomPosition(28, 49, "E7N58"))
 			}
 		}
 		if (creep.room.name == "E7N57") {
