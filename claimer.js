@@ -11,9 +11,18 @@ module.exports = {
 		if (creep.room.name == "E5N60") creep.moveTo(new RoomPosition(49, 30, "E5N60"))
 		if (creep.room.name == "E6N60") creep.moveTo(new RoomPosition(20, 49, "E6N60"))
 		if (creep.room.name == "E6N59") creep.moveTo(new RoomPosition(21, 49, "E6N59"))
-		if (creep.room.name == "E6N58") creep.moveTo(new RoomPosition(15, 49, "E6N58"))
+		if (creep.room.name == "E6N58") creep.moveTo(new RoomPosition(49, 18, "E6N58"))
 			
-		if (creep.room.name == "E6N57") {
+		if (creep.room.name == "E7N58") {
+			if (!creep.room.controller.my) {
+				var ob = creep.room.controller
+				creep.moveTo(ob)
+				creep.claimController(ob)
+			} else {
+				creep.moveTo(new RoomPosition(28, 49, "E7N58")
+			}
+		}
+		if (creep.room.name == "E7N57") {
 			var ob = creep.room.controller
 			creep.moveTo(ob)
 			creep.claimController(ob)
