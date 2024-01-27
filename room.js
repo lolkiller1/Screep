@@ -10,11 +10,11 @@ module.exports = {
 		if (roomLevel < 3) {
 			var miner = Game.creeps[roomName + "_Miner"]
 			if (miner) {
-				var energy = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE)
-				if (creep.pos.getRangeTo(energy) > 1) {
-					creep.moveTo(energy)
+				var energy = miner.pos.findClosestByRange(FIND_SOURCES_ACTIVE)
+				if (miner.pos.getRangeTo(energy) > 1) {
+					miner.moveTo(energy)
 				} else {
-					creep.harvest(energy)
+					miner.harvest(energy)
 				}
 			} else {
 				util.spawnCreep(roomName + "_Miner",room.energyAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
