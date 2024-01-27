@@ -10,7 +10,7 @@ module.exports = {
 		if (roomLevel < 3) {
 			var upgrader = Game.creeps[roomName + "_Upgrader"]
 			if (upgrader) {
-				roomUpgrader.run(creep)
+				roomUpgrader.run(upgrader)
 			} else {
 				util.spawnCreep(roomName + "_Upgrader",{m:2,c:1,w:1},{status:"harvesting"},roomName)
 			}
