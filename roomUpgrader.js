@@ -33,7 +33,7 @@ module.exports = {
 				if (creep.pos.getRangeTo(creep.room.controller) > 3) {
 					creep.moveTo(creep.room.controller)
 				} else {
-					creep.upgrade(creep.room.controller)
+					creep.upgradeController(creep.room.controller)
 				}
 			}
 		}
