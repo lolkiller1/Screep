@@ -22,12 +22,6 @@ module.exports = {
 				util.spawnCreep(roomName + "_Upgrader2",{m:2,c:1,w:1},{status:"harvesting"},roomName)
 			}
 			
-			var upgrader3 = Game.creeps[roomName + "_Upgrader3"]
-			if (upgrader3) {
-				roomUpgrader.run(upgrader3)
-			} else {
-				util.spawnCreep(roomName + "_Upgrader3",{m:2,c:1,w:1},{status:"harvesting"},roomName)
-			}
 		}
 	}
 }
