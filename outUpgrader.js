@@ -3,7 +3,7 @@ var util = require("util")
 module.exports = {
 	run(creep){
 		
-		if (creep.room.name != "E7N57"){
+		if (creep.room.name != "E7N58"){
 		if (creep.room.name == "E5N57") creep.moveTo(new RoomPosition(0, 14, 'E5N57'))
 		if (creep.room.name == "E4N57") console.log(creep.moveTo(new RoomPosition(43, 0, "E4N57")))
 		if (creep.room.name == "E4N58") creep.moveTo(new RoomPosition(0, 6, "E4N58"))
