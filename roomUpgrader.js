@@ -15,7 +15,7 @@ module.exports = {
 		} else {
 			var spawn = Game.spawns[creep.room.name]
 			if (spawn.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
-				if (creep.getRangeTo(spawn) > 1) {
+				if (creep.pos.getRangeTo(spawn) > 1) {
 					creep.moveTo(spawn)
 				} else {
 					creep.transfer(spawn,RESOURCE_ENERGY)
