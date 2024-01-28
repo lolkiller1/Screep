@@ -7,7 +7,7 @@ module.exports = {
 		var roomLevel = room.controller.level
 		var spawn = Game.spawns[roomName]
 		
-		if (roomLevel < 3) {
+		if (roomLevel < 5) {
 			var miner = Game.creeps[roomName + "_Miner"]
 			if (miner) {
 				var energy = miner.pos.findClosestByRange(FIND_SOURCES_ACTIVE)
