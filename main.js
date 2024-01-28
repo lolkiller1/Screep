@@ -22,6 +22,8 @@ tower.run(myTower)
 room.run("E6N59")
 room.run("E6N58")
 room.run("E6N57")
+room.run("E7N58")
+room.run("E7N57")
 
 for(const i in Memory.creeps) {
 	try {
@@ -128,12 +130,12 @@ for(const i in Memory.creeps) {
 	
 }
 
-
+/*
 util.spawnCreep("outUpgrader",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("outUpgrader2",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
-/*
 util.spawnCreep("outUpgrader3",  {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
 */
+
 
 util.spawnCreep("outUpgraderB",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("outUpgrader2B",  {m:10,w:7,c:3}, {status:"harvesting"}, 'E5N57')
