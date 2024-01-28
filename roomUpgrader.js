@@ -59,7 +59,7 @@ module.exports = {
 		if (creep.memory.status == "harvesting") {
 			var drop = util.findClosestDrop(creep)
 			if (drop){
-				if (creep.pos.getRangeTo(drop)){
+				if (creep.pos.getRangeTo(drop) > 1){
 					creep.moveTo(drop)
 				} else {
 					creep.pickup(drop)
