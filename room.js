@@ -27,13 +27,15 @@ module.exports = {
 				util.spawnCreep(roomName + "_Upgrader",room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 			}
 			
-			var upgrader2 = Game.creeps[roomName + "_Upgrader2"]
-			if (upgrader2) {
-				roomUpgrader.run(upgrader2)
-			} else {
-				//util.spawnCreep(roomName + "_Upgrader2",room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+			var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
+			if (constructionSpots[0]) {
+				var builder = Game.creeps[roomName + "_Builder"]
+				if (builder) {
+					roomUpgrader.build(builder)
+				} else {
+					util.spawnCreep(roomName + "_Builder",room.energyAvailable >= 500 ? {m:4,c:3,w:1} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+				}
 			}
-			
 		}
 	}
 }

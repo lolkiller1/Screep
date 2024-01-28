@@ -46,5 +46,34 @@ module.exports = {
 				}
 			}
 		}
+	},
+	build(creep){
+		var storageStatus = util.getCreepStorageStatus(creep)
+		
+		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
+			creep.memory.status = "working"
+		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
+			creep.memory.status = "harvesting"
+		}
+		
+		if (creep.memory.status == "harvesting") {
+			var drop = util.findClosestDrop(creep)
+			if (drop){
+				if (creep.getRangeTo(drop)){
+					creep.moveTo(drop)
+				} else {
+					creep.pickup(drop)
+				}
+			} else {
+				creep.gatherFromEnergy(creep)
+			}
+		} else {
+			var spot = util.findClosestBuildable(creep)
+			if (creep.pos.getRangeTo(spot) > 1) {
+				creep.moveTo(spot)
+			} else {
+				creep.build(spot)
+			}
+		}
 	}
 }
