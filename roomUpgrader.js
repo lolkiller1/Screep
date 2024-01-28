@@ -65,7 +65,7 @@ module.exports = {
 					creep.pickup(drop)
 				}
 			} else {
-				creep.gatherFromEnergy(creep)
+				util.gatherFromEnergy(creep)
 			}
 		} else {
 			var spot = util.findClosestBuildable(creep)
