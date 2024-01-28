@@ -147,6 +147,7 @@ util.spawnCreep("outUpgrader3B",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
 
 util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+util.spawnCreep("tess2", {m:12,w:7,c:5}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name",  {m:7,w:1,c:6}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("name2", {m:7,w:1,c:6}, {status:"harvesting"}, 'E5N57')
 //util.spawnCreep("name",  {m:11,w:3,c:8}, {status:"harvesting"}, 'E5N57')
