@@ -17,14 +17,14 @@ module.exports = {
 					miner.harvest(energy)
 				}
 			} else {
-				util.spawnCreep(roomName + "_Miner",room.energyAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Miner", room.energyCapacityAvailable >= 750 ? {w:5,m:5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
 			}
 			
 			var upgrader = Game.creeps[roomName + "_Upgrader"]
 			if (upgrader) {
 				roomUpgrader.run(upgrader)
 			} else {
-				util.spawnCreep(roomName + "_Upgrader",room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Upgrader", room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 			}
 			
 			var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
