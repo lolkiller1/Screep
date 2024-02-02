@@ -26,15 +26,15 @@ module.exports = {
 				if (builder) {
 					roomUpgrader.build(builder)
 				} else {
-					util.spawnCreep(roomName + "_Builder",room.energyCapacityAvailable >= 750 ? {w:2,c:4,m:6} : room.energyCapacityAvailable >= 500 ? {m:4,c:3,w:1} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
-				}
+					util.spawnCreep(roomName + "_Builder", room.energyCapacityAvailable >= 1300 ? {w:4,c:7,m:11} : room.energyCapacityAvailable >= 750 ? {w:2,c:4,m:6} : room.energyCapacityAvailable >= 500 ? {m:4,c:3,w:1} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+				} 
 			}
 			
 			var upgrader = Game.creeps[roomName + "_Upgrader"]
 			if (upgrader) {
 				roomUpgrader.run(upgrader)
 			} else {
-				util.spawnCreep(roomName + "_Upgrader", room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Upgrader", room.energyAvailable >= 1300 ? {w:5,c:5,m:10} : room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 			}
 		}
 	}
