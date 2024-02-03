@@ -2,7 +2,7 @@ var util = require("util")
 var roomTask = require("roomTask")
 var roomUpgrader = require("roomUpgrader")
 var tower = require("tower")
-
+var _ = require("lodash")
 
 module.exports = {
 	run(roomName){
@@ -12,9 +12,7 @@ module.exports = {
 		
 		roomTask.init(room)
 		var towers = roomTask.getTowers(room)
-		
-		console.log(towers[0])
-		
+				
 		for (var t in towers) {
 			tower.run(towers[t])
 		}
@@ -50,7 +48,7 @@ module.exports = {
 			
 		var upgrader2 = Game.creeps[roomName + "_Upgrader2"]
 		if (upgrader2) {
-			roomUpgrader.run2(upgrader2)
+			roomUpgrader.run2(upgrader2, towers)
 		} else if (upgrader && upgrader.hits > 500) {
 			util.spawnCreep(roomName + "_Upgrader2", room.energyAvailable >= 1300 ? {w:5,c:5,m:10} : room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 		}

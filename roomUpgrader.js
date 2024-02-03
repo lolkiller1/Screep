@@ -44,7 +44,7 @@ module.exports = {
 			}
 		}
 	},
-	run2(creep){
+	run2(creep, towers){
 		var storageStatus = util.getCreepStorageStatus(creep)
 		util.setStatus(creep)
 		
@@ -61,7 +61,7 @@ module.exports = {
 			}
 		} else {
 			var towers = creep.room.find(FIND_MY_STRUCTURES, {filter: function(object) {return object.structureType == STRUCTURE_TOWER && object.store.getFreeCapacity(RESOURCE_ENERGY) > 0}})
-			var tower = creep.pos.findClosestByPath(towers)
+			var tower = towers[0] ? towers[0] : false
 			
 			var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 			extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
