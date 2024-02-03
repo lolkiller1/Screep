@@ -1,12 +1,17 @@
 var util = require("util")
+var roomTask = require("roomTask")
 var roomUpgrader = require("roomUpgrader")
 var tower = require("tower")
+
 
 module.exports = {
 	run(roomName){
 		var room = Game.rooms[roomName]
 		var roomLevel = room.controller.level
 		var spawn = Game.spawns[roomName]
+		
+		roomTask.init(room)
+		roomTask.storeTowers(room)
 		
 		var towers = room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_TOWER }})
 		for (var t in towers) {
