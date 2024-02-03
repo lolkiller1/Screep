@@ -8,7 +8,7 @@ module.exports = {
 	},
 	getTowers(room) {
 		var towers
-		if (Game.time % 10 == 0 && Memory[room.name].towers) {
+		if (Game.time % 10 == 0 && Memory[room.name].towers != null) {
 			towers = []
 			for (var t in Memory[room.name].towers) {
 				towers.push(Game.getObjectById(Memory[room.name].towers[t]))
@@ -27,8 +27,7 @@ module.exports = {
 	},
 	getExtensions(room) {
 		var extensions
-		console.log(Memory[room.name].extensions != null)
-		console.log(Game.time % 10 == 0 && Memory[room.name].extensions)
+		console.log(Game.time % 10 == 0 && Memory[room.name].extensions != null)
 		if (Game.time % 10 == 0 && Memory[room.name].extensions) {
 			extensions = []
 			for (var e in Memory[room.name].extensions) {
