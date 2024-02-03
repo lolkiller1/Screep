@@ -1,4 +1,6 @@
 var util = require("util")
+var _ = require("lodash")
+
 
 module.exports = {
 	run(creep){
