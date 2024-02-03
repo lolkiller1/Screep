@@ -30,6 +30,13 @@ module.exports = {
 				creep.moveTo(20,49)
 				return
 			}
+			
+			var drop = util.findClosestDrop(creep)
+			if (drop) {
+				creep.moveTo(drop)
+				creep.harvest(drop)
+			}
+			
 		} else {
 			if (creep.room.name == "E5N56") {
 				creep.moveTo(20,49)
