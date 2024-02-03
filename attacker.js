@@ -10,7 +10,7 @@ module.exports = {
 			return
 		}
 	
-		var enemy = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, filter: function(e){return e.pos.y < 7})
+		var enemy = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {filter: function(e){return e.pos.y < 7}})
 		
 		creep.heal(creep)
 		
