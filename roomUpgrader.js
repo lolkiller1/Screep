@@ -3,12 +3,7 @@ var util = require("util")
 module.exports = {
 	run(creep){
 		var storageStatus = util.getCreepStorageStatus(creep)
-		
-		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
-			creep.memory.status = "working"
-		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
-			creep.memory.status = "harvesting"
-		}
+		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
 			var drop = util.findClosestDrop(creep)
@@ -49,12 +44,7 @@ module.exports = {
 	},
 	build(creep){
 		var storageStatus = util.getCreepStorageStatus(creep)
-		
-		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
-			creep.memory.status = "working"
-		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
-			creep.memory.status = "harvesting"
-		}
+		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
 			var drop = util.findClosestDrop(creep)

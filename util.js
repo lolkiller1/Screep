@@ -96,6 +96,12 @@ module.exports = {
 			case LEFT: return RIGHT
 			default: return BOTTOM_RIGHT
 		}
+	},
+	setStatus(creep) {
+		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
+			creep.memory.status = "working"
+		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
+			creep.memory.status = "harvesting"
+		}
 	}
-	
 }
