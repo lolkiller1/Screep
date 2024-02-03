@@ -39,7 +39,7 @@ module.exports = {
 			
 		} else {
 			if (creep.room.name == "E5N56") {
-				creep.moveTo(36,7)
+				creep.moveTo(22,0)
 				return
 			}
 			
