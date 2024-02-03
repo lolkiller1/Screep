@@ -33,6 +33,7 @@ for(const i in Memory.creeps) {
 	try {
 		if (Game.creeps[i] == undefined) {
 			delete Memory.creeps[i]
+			continue
 		}
 
 		if (Game.creeps[i].name == "tess") {
