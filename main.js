@@ -137,7 +137,7 @@ for(const i in Memory.creeps) {
 			dangerMiner.run(Game.creeps[i])
 		}
 		
-		if (Game.creeps[i].name == "dangerGather" || Game.creeps[i].name == "dangerGather2" || Game.creeps[i].name == "dangerGather3"}) {
+		if (Game.creeps[i].name == "dangerGather" || Game.creeps[i].name == "dangerGather2" || Game.creeps[i].name == "dangerGather3") {
 			dangerMiner.gather(Game.creeps[i])
 		}
 	
