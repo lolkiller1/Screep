@@ -13,6 +13,8 @@ module.exports = {
 		roomTask.init(room)
 		var towers = roomTask.getTowers(room)
 		
+		console.log(towers[0])
+		
 		for (var t in towers) {
 			tower.run(towers[t])
 		}
