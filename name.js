@@ -3,7 +3,7 @@ var _ = require("lodash")
 
 module.exports = {
 	run(name){
-		util.setStatus(creep)
+		util.setStatus(name)
 		
 		if (name.memory.status == "harvesting") {
 			util.gatherFromStorage(name)
