@@ -11,9 +11,14 @@ module.exports = {
 		}
 	
 		var enemy = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {filter: function(e){return e.pos.y < 7}})
+		var friendly = creep.pos.findClosestByRange(FIND_MY_CREEPS, {filter: function(e){return e.hits < e.hitsMax}})
 		
-		creep.heal(creep)
-		
+		if (friendly) {
+			creep.heal(friendly)
+		} else {
+			creep.heal(creep)
+		}
+			
 		if (type == "ranged"){
 			if (creep.pos.getRangeTo(enemy) > 3 && creep.hits / creep.hitsMax > .9) {
 				creep.moveTo(enemy)
