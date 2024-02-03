@@ -163,7 +163,7 @@ util.spawnCreep("outUpgrader3B",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
 util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
 util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
 util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
-util.spawnCreep("dangerMiner", {w:7,m:7}, {},'E5N57')
+util.spawnCreep("dangerMiner", {w:10,m:10}, {},'E5N57')
 util.spawnCreep("tessTheKiller",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
 util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
 
