@@ -127,7 +127,7 @@ for(const i in Memory.creeps) {
 			filler.run(Game.creeps[i])
 		}
 		
-		if (Game.creeps[i].name == "tessTheKiller") {
+		if (Game.creeps[i].name == "tessTheKiller" || Game.creeps[i].name == "tessTheKiller2") {
 			attacker.run(Game.creeps[i])
 		}
 	
