@@ -17,14 +17,8 @@ module.exports = {
 		if (creep.room.name == "E6N58") creep.moveTo(new RoomPosition(49, 18, "E6N58"))
 		return
 		}
-
-		var storageStatus = util.getCreepStorageStatus(creep)
 		
-		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
-			creep.memory.status = "working"
-		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
-			creep.memory.status = "harvesting"
-		}
+		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
 			util.gatherFromEnergy(creep)
@@ -55,13 +49,7 @@ module.exports = {
 		return
 		}
 		
-		var storageStatus = util.getCreepStorageStatus(creep)
-		
-		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
-			creep.memory.status = "working"
-		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
-			creep.memory.status = "harvesting"
-		}
+		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
 			util.gatherFromEnergy(creep)

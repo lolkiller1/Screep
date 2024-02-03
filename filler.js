@@ -3,13 +3,7 @@ var _ = require("lodash")
 
 module.exports = {
 	run(creep){
-		var storageStatus = util.getCreepStorageStatus(creep)
-		
-		if (storageStatus == "FULL") {
-			creep.memory.status = "working"
-		} else if (storageStatus == "EMPTY") {
-			creep.memory.status = "harvesting"
-		}
+		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
 			var spot = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {filter: function(ob){return ob.resourceType == RESOURCE_ENERGY && ob.amount > 200}})
