@@ -18,7 +18,7 @@ module.exports = {
 		if (type == "ranged"){
 			if (creep.pos.getRangeTo(enemy) > 3) {
 				creep.moveTo(enemy)
-			} else {
+			} else if (creep.hits / creep.hitsMax < .8) {
 				var direction = creep.pos.getDirectionTo(enemy)
 				creep.move(util.getOppositeDirection(direction))
 			}			
