@@ -5,7 +5,7 @@ module.exports = {
 	run(name){
 		util.setStatus(name)
 		
-		var spot = Game.spawns["E5N57"]
+		var spot = Game.spawns["E5N57"].store.getFreeCapacity(RESOURCE_ENERGY) > 0 ? Game.spawns["E5N57"] : false
 		var extensions = name.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 		extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 		spot = spot ? spot : name.pos.findClosestByPath(extensions)
