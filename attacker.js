@@ -15,9 +15,9 @@ module.exports = {
 		creep.heal(creep)
 		
 		if (type == "ranged"){
-			if (creep.pos.getRangeTo(enemy) > 3) {
+			if (creep.pos.getRangeTo(enemy) > 3 && creep.hits / creep.hitsMax > .9) {
 				creep.moveTo(enemy)
-			} else if (creep.hits / creep.hitsMax < .8) {
+			} else if (creep.hits / creep.hitsMax < .6) {
 				var direction = creep.pos.getDirectionTo(enemy)
 				creep.move(util.getOppositeDirection(direction))
 			}			
