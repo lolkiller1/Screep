@@ -12,7 +12,7 @@ module.exports = {
 		
 		var towers = room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_TOWER }})
 		for (var tower in towers) {
-			Memory[room.name].towers.push(towers[tower])
+			Memory[room.name].towers.push(towers[tower].id)
 		}
 	}
 }
