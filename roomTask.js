@@ -27,7 +27,7 @@ module.exports = {
 	},
 	getExtensions(room) {
 		var extensions
-		if (Game.time % 10 == 0 && Memory[room.name].extensions) {
+		if (Game.time % 10 == 0 && Memory[room.name].extensions != null) {
 			extensions = []
 			for (var e in Memory[room.name].extensions) {
 				extensions.push(Game.getObjectById(Memory[room.name].extensions[e]))
