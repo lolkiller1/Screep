@@ -10,6 +10,7 @@ module.exports = {
 			}
 		}
 		
+		addParts(array, TOUGH, body.t)
 		addParts(array, MOVE, body.m)
 		addParts(array, WORK, body.w)
 		addParts(array, CARRY, body.c)
@@ -17,7 +18,7 @@ module.exports = {
 		addParts(array, RANGED_ATTACK, body.r)
 		addParts(array, HEAL, body.h)
 		addParts(array, CLAIM, body.claim)
-		addParts(array, TOUGH, body.t)
+		
 		
 		return array
 	},
