@@ -35,6 +35,8 @@ module.exports = {
 			return extensions
 		}
 		
+		console.log("test2")
+		
 		delete Memory[room.name].extensions
 		Memory[room.name].extensions = []
 		
