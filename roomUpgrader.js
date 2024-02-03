@@ -61,7 +61,7 @@ module.exports = {
 			}
 		} else {
 			var towers = creep.room.find(FIND_MY_STRUCTURES, {filter: function(object) {return object.structureType == STRUCTURE_TOWER && object.store.getFreeCapacity(RESOURCE_ENERGY) > 0}})
-			var tower = creep.pos.findClosestByPath(tower)
+			var tower = creep.pos.findClosestByPath(towers)
 			
 			var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 			extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
