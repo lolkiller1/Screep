@@ -25,6 +25,15 @@ module.exports = {
 		
 	},
 	gather(creep){
+		
+		var enemy = creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS)
+		
+		if (creep.pos.getRangeTo(enemy) < 5) {
+			var direction = creep.pos.getDirectionTo(enemy)
+			creep.move(util.getOppositeDirection(direction))
+			return
+		}
+		
 		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
