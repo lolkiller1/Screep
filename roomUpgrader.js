@@ -60,13 +60,13 @@ module.exports = {
 				util.gatherFromEnergy(creep)
 			}
 		} else {
-			var towers = creep.room.find(FIND_MY_STRUCTURES, {filter: function(object) {return object.structureType == STRUCTURE_TOWER && object && object.store && object.store.getFreeCapacity(RESOURCE_ENERGY) > 0}})
-			var tower = creep.pos.findClosestByPath(tower)
+			//var towers = creep.room.find(FIND_MY_STRUCTURES, {filter: function(object) {return object.structureType == STRUCTURE_TOWER && object && object.store && object.store.getFreeCapacity(RESOURCE_ENERGY) > 0}})
+			//var tower = creep.pos.findClosestByPath(tower)
 			
 			var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 			extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 			spot = creep.pos.findClosestByPath(extensions)
-			if (tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+			if (false) {
 				if (creep.pos.getRangeTo(tower) > 1) {
 					creep.moveTo(tower)
 				} else {
