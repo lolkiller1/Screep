@@ -105,7 +105,7 @@ for(const i in Memory.creeps) {
 			outUpgrader.run(Game.creeps[i])
 		}
 		
-		if (Game.creeps[i].name == "outUpgrader2") {
+		if (Game.creeps[i].name == "outUpgrader2" || Game.creeps[i].name == "outUpgrader22" || Game.creeps[i].name == "outUpgrader23" || Game.creeps[i].name == "outUpgrader24" || Game.creeps[i].name == "outUpgrader25") {
 			outUpgrader2.run(Game.creeps[i])
 		}
 		
