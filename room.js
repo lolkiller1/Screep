@@ -14,6 +14,8 @@ module.exports = {
 		var towers = roomTask.getTowers(room)
 		var extensions = roomTask.getExtensions(room)
 		var needyExtensions = util.getExtensionsInNeed(extensions)
+		var drops = roomTask.getDrops(room)
+		var ruins = roomTask.getRuins(room)
 				
 		for (var t in towers) {
 			tower.run(towers[t])

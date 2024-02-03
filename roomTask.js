@@ -28,11 +28,8 @@ module.exports = {
 	getExtensions(room) {
 		var extensions
 		if (Game.time % 10 != 0 && Memory[room.name].extensions) {
-			extensions = []
-			for (var e in Memory[room.name].extensions) {
-				extensions.push(Game.getObjectById(Memory[room.name].extensions[e]))
-			}
-			return extensions
+			console.log("here")
+			return util.loadFromMemory(room,"extensions")
 		}
 		
 		
@@ -44,5 +41,8 @@ module.exports = {
 			Memory[room.name].extensions.push(extensions[extension].id)
 		}
 		return extensions
+	},
+	getDrops(room) {
+		return room.find(FIND_DROPPED_RESOURCES, {filter: {resourceType:RESOURCE_ENERGY}})
 	}
 }
