@@ -117,7 +117,7 @@ module.exports = {
 		
 		return false
 	},
-	getExensionsInNeed(extensions){
+	getExtensionsInNeed(extensions){
 		return _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 	}
 }
