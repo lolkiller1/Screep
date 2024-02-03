@@ -95,7 +95,7 @@ module.exports = {
 		}
 	},
 	findClosestBuildable(creep) {
-	    return creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES, filter:function(e){return e.id != "65bebdb58277a10012323407" && e.id != "65bebd818277a10012323405"}})
+	    return creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES, filter:function(e){return e.id != "65bebdb58277a10012323407" && e.id != "65bebd818277a10012323405"})
 	},
 	findClosestRuin(creep) {
 		return creep.pos.findClosestByPath(FIND_RUINS, 
