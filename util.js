@@ -84,6 +84,18 @@ module.exports = {
 		var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 		extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 		return creep.pos.findClosestByPath(extensions)
+	},
+	getOppositeDirection(direction) {
+		switch(direction) {
+			case:TOP return BOTTOM
+			case:TOP_RIGHT return BOTTOM_LEFT
+			case:RIGHT return LEFT
+			case:BOTTOM_RIGHT return TOP_LEFT
+			case:BOTTOM return TOP 
+			case:BOTTOM_LEFT return TOP_RIGHT 
+			case:LEFT return RIGHT
+			default: return BOTTOM_RIGHT
+		}
 	}
 	
 }

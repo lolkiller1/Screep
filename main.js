@@ -9,6 +9,7 @@ var claimer = require("claimer")
 var outUpgrader = require("outUpgrader")
 var outUpgrader2 = require("outUpgrader2")
 var outUpgrader3 = require("outUpgrader3")
+var attacker = require("attacker")
 var room = require("room")
 
 if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
@@ -124,6 +125,10 @@ for(const i in Memory.creeps) {
 		
 		if (Game.creeps[i].name == "tempFiller") {
 			filler.run(Game.creeps[i])
+		}
+		
+		if (Game.creeps[i].name == "tessTheKiller") {
+			attacker.run(Game.creeps[i])
 		}
 	
 	} catch (error) {
