@@ -11,7 +11,6 @@ module.exports = {
 		}
 	
 		var enemy = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS)
-		creep.moveTo(enemy)
 		
 		creep.heal(creep)
 		
