@@ -11,9 +11,8 @@ module.exports = {
 		var spawn = Game.spawns[roomName]
 		
 		roomTask.init(room)
-		roomTask.storeTowers(room)
+		var towers = roomTask.getTowers(room)
 		
-		var towers = room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_TOWER }})
 		for (var t in towers) {
 			tower.run(towers[t])
 		}
