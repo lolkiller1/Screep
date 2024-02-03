@@ -29,6 +29,8 @@ module.exports = {
 					name.moveTo(spot)
 				} else {
 					name.transfer(spot, RESOURCE_ENERGY)
+					extensions = _.filter(extensions, function(e) {return e.id != spot.id})
+					name.moveTo(name.pos.findClosestByPath(extensions))
 				}
 			}			
 			
