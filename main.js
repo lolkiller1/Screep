@@ -76,6 +76,10 @@ for(const i in Memory.creeps) {
 			}
 		
 		}
+		
+		if (Game.creeps[i].name == "builder") {
+			builder.ruin(Game.creeps[i])
+		}
 	
 		if (Game.creeps[i].name == "name2") {
 			if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
@@ -173,6 +177,11 @@ if (!Game.creeps["tessTheKiller"]) {
 
 if (!Game.creeps["tessTheKiller2"]) {
 	util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+
+}
+
+if (!Game.creeps["builder"]) {
+	util.spawnCreep("builder",  {c:4,w:6,m:10}, {}, 'E5N57')
 
 }
 
