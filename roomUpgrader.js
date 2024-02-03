@@ -66,7 +66,7 @@ module.exports = {
 			var extensions = creep.room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
 			extensions = _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 			spot = creep.pos.findClosestByPath(extensions)
-			if (tower && tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+			if (tower) {
 				if (creep.pos.getRangeTo(tower) > 1) {
 					creep.moveTo(tower)
 				} else {
