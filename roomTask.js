@@ -28,6 +28,7 @@ module.exports = {
 	getExtensions(room) {
 		var extensions
 		console.log(Game.time % 10)
+		console.log(Game.time % 10 == 0 && Memory[room.name].extensions)
 		if (Game.time % 10 == 0 && Memory[room.name].extensions) {
 			extensions = []
 			for (var e in Memory[room.name].extensions) {
