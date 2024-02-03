@@ -117,14 +117,19 @@ module.exports = {
 		
 		return false
 	},
-	getExtensionsInNeed(extensions){
+	getExtensionsInNeed(extensions) {
 		return _.filter(extensions, function(extension) {return extension.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 	},
-	loadFromMemory(room, list) {
-		retval = []
+	load(room, list) {
+		var retval = []
 		for (var e in Memory[room.name][list]) {
 			retval.push(Game.getObjectById(Memory[room.name][list][e]))
 		}
 		return retval
+	},
+	save(room,list,save) {
+		for (var e in save) {
+			Memory[room.name][list].push(save[e].id)
+		}
 	}
 }
