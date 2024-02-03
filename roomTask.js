@@ -1,3 +1,5 @@
+var util = require("util")
+
 module.exports = {
 	init(room) {
 		if (!Memory[room.name]) {
@@ -22,5 +24,24 @@ module.exports = {
 			Memory[room.name].towers.push(towers[tower].id)
 		}
 		return towers
+	},
+	getExtensions(room) {
+		var extensions
+		if (Game.time % 0 != 0) {
+			extensions = []
+			for (var e in Memory[room.name].extensions) {
+				extensions.push(Game.getObjectById(Memory[room.name].extensions[e]))
+			}
+			return extensions
+		}
+		
+		delete Memory[room.name].extensions
+		Memory[room.name].extensions = []
+		
+		extensions = room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_EXTENSION }})
+		for (var extension in extensions) {
+			Memory[room.name].extensions.push(extensions[extension].id)
+		}
+		return extensions
 	}
 }
