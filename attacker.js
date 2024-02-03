@@ -6,15 +6,13 @@ module.exports = {
 		var flag = creep.memory.flag
 		var type = creep.memory.type
 		
-		if (flag.room != creep.room) {
-			creep.moveTo(flag)
-			return
-		}
-		
+	
 		var enemy = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS)
 		creep.moveTo(enemy)
 		
-		if (creep.type == "ranged"){
+		creep.heal(creep)
+		
+		if (type == "ranged"){
 			if (creep.pos.getRangeTo(enemy) > 3) {
 				creep.moveTo(enemy)
 			} else {
