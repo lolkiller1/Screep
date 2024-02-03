@@ -8,6 +8,10 @@ module.exports = {
 		var roomLevel = room.controller.level
 		var spawn = Game.spawns[roomName]
 		
+		var towers = room.find(FIND_MY_STRUCTURES, {filter: { structureType: STRUCTURE_TOWER }})
+		for (var t in towers) {
+			tower.run(t)
+		}
 		
 		var miner = Game.creeps[roomName + "_Miner"]
 		if (miner) {
