@@ -34,7 +34,7 @@ module.exports = {
 			var drop = util.findClosestDrop(creep)
 			if (drop) {
 				creep.moveTo(drop)
-				creep.harvest(drop)
+				creep.pickup(drop)
 			}
 			
 		} else {
