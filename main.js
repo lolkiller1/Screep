@@ -145,38 +145,68 @@ for(const i in Memory.creeps) {
 	
 }
 
-/*
-util.spawnCreep("outUpgrader",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("outUpgrader2",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("outUpgrader3",  {m:2,w:1,c:1}, {status:"harvesting"}, 'E5N57')
+
+if (!Game.creeps["dangerGather"]) {
+	util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
+
+}
+
+if (!Game.creeps["dangerGather2"]) {
+	util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
+
+}
+
+if (!Game.creeps["dangerGather3"]) {
+	util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
+
+}
+
+if (!Game.creeps["dangerMiner"]) {
+	util.spawnCreep("dangerMiner", {w:10,m:10}, {},'E5N57')
+
+}
+
+if (!Game.creeps["tessTheKiller"]) {
+	util.spawnCreep("tessTheKiller",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tessTheKiller2"]) {
+	util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+
+}
+
+if (!Game.creeps["miner1"]) {
+	util.spawnCreep("miner1", {m:5,w:5}, {source:"5bbcad319099fc012e636ce8", spot:{x:36,y:10}}, 'E5N57')
+
+}
+
+if (!Game.creeps["miner2"]) {
+	util.spawnCreep("miner2", {m:5,w:5}, {source:"5bbcad319099fc012e636ce7", spot:{x:30,y:6}}, 'E5N57')
+
+}
+
+if (!Game.creeps["name3"]) {
+	util.spawnCreep("name3", {m:10,c:10}, {status:"harvesting"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tess"]) {
+	util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tess2"]) {
+	util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+
+}
+
+if (!Game.creeps["name"]) {
+	util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
 
 
+}
 
-util.spawnCreep("outUpgraderB",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("outUpgrader2B",  {m:10,w:7,c:3}, {status:"harvesting"}, 'E5N57')
-*/
-
-/*
-util.spawnCreep("outUpgrader3B",  {m:6,w:3,c:3}, {status:"harvesting"}, 'E5N57')
-*/
-
-util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
-util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
-util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
-util.spawnCreep("dangerMiner", {w:10,m:10}, {},'E5N57')
-util.spawnCreep("tessTheKiller",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
-util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
-
-util.spawnCreep("miner1", {m:5,w:5}, {source:"5bbcad319099fc012e636ce8", spot:{x:36,y:10}}, 'E5N57')
-util.spawnCreep("miner2", {m:5,w:5}, {source:"5bbcad319099fc012e636ce7", spot:{x:30,y:6}}, 'E5N57')
-util.spawnCreep("name3", {m:10,c:10}, {status:"harvesting"}, 'E5N57')
-
-
-util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
-//util.spawnCreep("tess3", {m:12,w:7,c:5}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
-util.spawnCreep("name2", {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
-//util.spawnCreep("name",  {m:11,w:3,c:8}, {status:"harvesting"}, 'E5N57')
-//util.spawnCreep("name2", {m:11,w:3,c:8}, {status:"harvesting"}, 'E5N57')
-
+if (!Game.creeps["name2"]) {
+	util.spawnCreep("name2", {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
+}
