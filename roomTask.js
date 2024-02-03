@@ -5,7 +5,7 @@ module.exports = {
 		}
 	},
 	storeTowers(room) {
-		if (Game.time / 10 != 0) return
+		if (Game.time % 10 != 0) return
 		
 		delete Memory[room.name].towers
 		Memory[room.name].towers = []
