@@ -105,5 +105,17 @@ module.exports = {
 		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
 			creep.memory.status = "harvesting"
 		}
+	},
+	cower(creep) {
+		var enemy = creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS)
+		
+		if (enemy && creep.pos.getRangeTo(enemy) < 5) {
+			var direction = creep.pos.getDirectionTo(enemy)
+			creep.move(this.getOppositeDirection(direction))
+			return true
+		}
+		
+		return false
+		
 	}
 }
