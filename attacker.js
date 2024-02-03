@@ -3,7 +3,6 @@ var util = require("util")
 
 module.exports = {
 	run(creep){
-		var flag = creep.memory.flag
 		var type = creep.memory.type
 		
 		if (creep.room.name == "E5N57") {
