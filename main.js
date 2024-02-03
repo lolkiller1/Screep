@@ -78,7 +78,7 @@ for(const i in Memory.creeps) {
 		}
 		
 		if (Game.creeps[i].name == "builder") {
-			builder.ruin(Game.creeps[i])
+			builder.run(Game.creeps[i])
 		}
 	
 		if (Game.creeps[i].name == "name2") {
