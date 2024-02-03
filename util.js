@@ -98,7 +98,7 @@ module.exports = {
 		}
 	},
 	setStatus(creep) {
-		var storageStatus = getCreepStorageStatus(creep)
+		var storageStatus = this.getCreepStorageStatus(creep)
 		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
 			creep.memory.status = "working"
 		} else if (storageStatus == "EMPTY" && creep.memory.status == "working") {
