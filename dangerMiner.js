@@ -17,11 +17,20 @@ module.exports = {
 			return
 		}
 		
-		if (creep.getRangeTo(source) > 1) {
+		if (creep.pos.getRangeTo(source) > 1) {
 			creep.moveTo(source)
 		} else {
 			creep.harvest(source)
 		}
 		
+	},
+	gather(creep){
+		util.setStatus(creep)
+		
+		if (creep.memory.status == "harvesting") {
+			
+		} else {
+			
+		}
 	}
 }
