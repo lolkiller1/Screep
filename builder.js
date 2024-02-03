@@ -4,10 +4,11 @@ module.exports = {
 	run(creep){
 		util.setStatus(creep)
 		
-		if (creep.memory.status == "harvesting") {
+		var spot = util.findClosestBuildable(creep)
+		
+		if (creep.memory.status == "harvesting" || !spot) {
 			util.gatherFromStorage(creep)
 		} else {
-			var spot = util.findClosestBuildable(creep)
 			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
 			} else {
