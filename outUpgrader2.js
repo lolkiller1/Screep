@@ -4,7 +4,7 @@ module.exports = {
 	run(creep){
 		
 		if (creep.room.name != "E7N57") {
-			creep.moveTo(new RoomPosition(50,50,"E7N57"))
+			creep.moveTo(new RoomPosition(19,18,"E7N57"))
 		}
 		
 			
