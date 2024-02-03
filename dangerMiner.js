@@ -28,9 +28,21 @@ module.exports = {
 		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
-			
+			if (creep.room.name == "E5N57") {
+				creep.moveTo(20,49)
+				return
+			}
 		} else {
+			if (creep.room.name == "E5N56") {
+				creep.moveTo(20,49)
+				return
+			}
 			
+			if (creep.pos.getRangeTo(creep.room.storage) > 1) {
+				creep.moveTo(creep.room.storage)
+			} else {
+				creep.transfer(creep.room.storage, RESOURCE_ENERGY)
+			}
 		}
 	}
 }
