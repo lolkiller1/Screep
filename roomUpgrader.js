@@ -1,21 +1,12 @@
 var util = require("util")
 
 module.exports = {
-	run(creep, extensions){
+	run(creep, extensions, drops, ruins){
 		var storageStatus = util.getCreepStorageStatus(creep)
 		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
-			var drop = util.findClosestDrop(creep)
-			if (drop) {
-				if (creep.pos.getRangeTo(drop) > 1){
-					creep.moveTo(drop)
-				} else {
-					creep.pickup(drop)
-				}
-			} else {
-				util.gatherFromEnergy(creep)
-			}
+			util.gather(creep, drops, ruins)
 		} else {
 			var spawn = Game.spawns[creep.room.name]
 			var spot = false
@@ -45,21 +36,12 @@ module.exports = {
 			}
 		}
 	},
-	run2(creep, extensions, towers){
+	run2(creep, extensions, towers, drops, ruins){
 		var storageStatus = util.getCreepStorageStatus(creep)
 		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
-			var drop = util.findClosestDrop(creep)
-			if (drop) {
-				if (creep.pos.getRangeTo(drop) > 1){
-					creep.moveTo(drop)
-				} else {
-					creep.pickup(drop)
-				}
-			} else {
-				util.gatherFromEnergy(creep)
-			}
+			util.gather(creep, drops, ruins)
 		} else {
 			towers = _.filter(towers, {filter: function(object) {return object.store.getFreeCapacity(RESOURCE_ENERGY) > 0}})
 			var tower = towers[0] ? towers[0] : false
@@ -92,21 +74,12 @@ module.exports = {
 			}
 		}
 	},
-	build(creep){
+	build(creep, drops, ruins){
 		var storageStatus = util.getCreepStorageStatus(creep)
 		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
-			var drop = util.findClosestDrop(creep)
-			if (drop){
-				if (creep.pos.getRangeTo(drop) > 1){
-					creep.moveTo(drop)
-				} else {
-					creep.pickup(drop)
-				}
-			} else {
-				util.gatherFromEnergy(creep)
-			}
+			util.gather(creep, drops, ruins)
 		} else {
 			var spot = util.findClosestBuildable(creep)
 			if (creep.pos.getRangeTo(spot) > 3) {

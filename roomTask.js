@@ -29,6 +29,25 @@ module.exports = {
 		return extensions
 	},
 	getDrops(room) {
-		return room.find(FIND_DROPPED_RESOURCES, {filter: {resourceType:RESOURCE_ENERGY}})
+		var drops
+		if (Game.time % 2 != 0 && Memory[room.name].drops) {
+			return util.load(room,"drops")
+		}
+		
+		Memory[room.name].drops = []
+		drops = room.find(FIND_DROPPED_RESOURCES, {filter: { resourceType: RESOURCE_ENERGY }})
+		util.save(room,"drops",drops)
+		return drops
+	},
+	getRuins(room) {
+		var ruins
+		if (Game.time % 10 != 0 && Memory[room.name].ruins) {
+			return util.load(room,"ruins")
+		}
+		
+		Memory[room.name].ruins = []
+		ruins = room.find(FIND_RUINS, {filter: { resourceType: RESOURCE_ENERGY }})
+		util.save(room,"ruins",ruins)
+		return ruins
 	}
 }

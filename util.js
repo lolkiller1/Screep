@@ -38,6 +38,30 @@ module.exports = {
 			return "MID"
 		}
 	},
+	gather(creep, drops, ruins){
+		var drop = drops[0] ? creep.pos.findClosestByPath(drops) : false
+		var ruin = ruins[0] ? creep.pos.findClosestByPath(ruins) : false
+		
+		if (ruin) {
+			if (creep.pos.getRangeTo(ruin) > 1){
+				creep.moveTo(ruin)
+			} else {
+				creep.withdraw(ruin, RESOURCE_ENERGY)
+			}
+			return
+		}
+		
+		if (drop) {
+			if (creep.pos.getRangeTo(drop) > 1){
+				creep.moveTo(drop)
+			} else {
+				creep.pickup(drop)
+			}
+			return
+		}
+		
+		this.gatherFromEnergy(creep)
+	},
 	gatherFromEnergy(creep, spot) {
 		var energy
 		if (spot) {
