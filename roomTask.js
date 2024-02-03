@@ -9,7 +9,7 @@ module.exports = {
 	getTowers(room) {
 		var towers
 		if (Game.time % 10 != 0 && Memory[room.name].towers != null) {
-			util.loadFromMemory(room,"towers")
+			util.load(room,"towers")
 		}
 		
 		Memory[room.name].towers = []
@@ -20,7 +20,7 @@ module.exports = {
 	getExtensions(room) {
 		var extensions
 		if (Game.time % 10 != 0 && Memory[room.name].extensions) {
-			return util.loadFromMemory(room,"extensions")
+			return util.load(room,"extensions")
 		}
 		
 		Memory[room.name].extensions = []
