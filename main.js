@@ -202,6 +202,7 @@ if (!Game.creeps["tess2"]) {
 }
 
 if (!Game.creeps["name"]) {
+	console.log("here")
 	util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
 
 
