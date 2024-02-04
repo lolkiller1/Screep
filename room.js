@@ -5,10 +5,12 @@ var tower = require("tower")
 var waller = require("waller")
 
 module.exports = {
-	run(roomName){
+	run(roomName, opts){
 		var room = Game.rooms[roomName]
 		var roomLevel = room.controller.level
 		var spawn = Game.spawns[roomName]
+		
+		var roaded = opts.roaded ? true : false
 		
 		roomTask.init(room)
 		var towers = roomTask.getTowers(room)
