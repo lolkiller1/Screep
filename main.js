@@ -238,14 +238,16 @@ if (!Game.creeps["dangerGather2"] && !spawning) {
 
 }
 
-
-
-
 if (!Game.creeps["waller"] && !spawning) {
 	util.spawnCreep("waller", {c:1,m:2,w:1}, {status:"harvesting"},'E5N57')
 	spawning = true
 }
 
-
-
-
+/*
+	---------
+	OUTCREEPS
+	---------
+*/
+if (!Game.creeps["claimer"]) {
+	util.spawnCreep("claimer", {claim:1,m:1}, {status:"harvesting"},'E7N57')
+}
