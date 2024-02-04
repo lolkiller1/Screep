@@ -48,7 +48,7 @@ for(const i in Memory.creeps) {
 		var creep = Game.creeps[i]
 
 	if (creep.name == "tess" || creep.name == "tess2" || creep.name == "tess3") {
-			tess.run(creep, link2)
+			tess.run(creep, link1)
 		}
 	
 		if (creep.name == "name") {
