@@ -51,6 +51,10 @@ module.exports = {
 		return ramps
 	},
 	setNextRampart(creep, ramps) {	
+		
+		if (!ramps) return
+	
+	
 		var cur = creep.memory.curRamp
 		cur += 1
 		if (cur > ramps.length - 1) {
