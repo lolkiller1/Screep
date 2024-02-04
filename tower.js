@@ -25,7 +25,7 @@ module.exports = {
 			}
 		} else if (roads && roads.length > 0) {
 			for (var i in roads) {
-				if (roads[i].hits / road[i].hitsMax < .5) {
+				if (roads[i].hits / roads[i].hitsMax < .5) {
 					tower.repair(roads[i])
 					break
 				}
