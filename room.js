@@ -10,6 +10,10 @@ module.exports = {
 		var roomLevel = room.controller.level
 		var spawn = Game.spawns[roomName]
 		
+		if (spawn && spawn.hits < spawn.hitsMax) {
+			room.controller.activateSafeMode()
+		}
+		
 		var roaded = opts && opts.roaded ? true : false
 		
 		roomTask.init(room)
