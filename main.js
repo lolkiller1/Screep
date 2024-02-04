@@ -32,7 +32,7 @@ room.run("E7N57")
 
 for(const i in Memory.creeps) {
 	try {
-		if (Game.creeps[i] == undefined && i != "waller") {
+		if (Game.creeps[i] == undefined && i != "waller" && i.search("Waller") == -1) {
 			delete Memory.creeps[i]
 			continue
 		}

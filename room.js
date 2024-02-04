@@ -56,5 +56,14 @@ module.exports = {
 		} else if (upgrader && upgrader.hits > 500 && miner && miner.hits > 500) {
 			util.spawnCreep(roomName + "_Upgrader2", room.energyCapacityAvailable >= 1300 ? {w:5,c:5,m:10} : room.energyCapacityAvailable >= 750 ? {c:3,m:6,w:3} : room.energyCapacityAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 		}
+		
+		if (roomLevel >= 4) {
+			var waller = Game.creeps[roomName + "_Waller"]
+			if (waller) {
+				waller.run(waller)
+			} else {
+				util.spawnCreep(roomName + "_Waller", {w:2,c:2,m:4},{status:"harvesting"},roomName)
+			}
+		}
 	}
 }
