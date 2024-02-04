@@ -20,7 +20,7 @@ module.exports = {
 				spot = name.pos.findClosestByPath(extensions)
 				
 				if (!spot) {
-					name.memory.status = "harvesting"
+					util.gatherFromStorage(name)
 					return
 				}
 				
