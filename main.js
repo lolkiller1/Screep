@@ -29,7 +29,7 @@ if (Game.time % 4 == 0) link2.transferEnergy(link1)
 tower.run(myTower)
 tower.run(myTower2)
 
-room.run("E6N58", {roaded:false})
+room.run("E6N58", {roaded:true})
 room.run("E6N57", {roaded:true})
 room.run("E7N58", {roaded:true})
 room.run("E7N57", {roaded:true})
