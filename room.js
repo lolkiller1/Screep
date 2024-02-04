@@ -38,7 +38,7 @@ module.exports = {
 				miner.harvest(energy)
 			}
 		} else {
-			util.spawnCreep(roomName + "_Miner", room.energyCapacityAvailable >= 750 ? {w:5,m:5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
+			util.spawnCreep(roomName + "_Miner", room.energyCapacityAvailable >= 750 ? {w:5,m:roaded ? 5 : 5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
 		}
 		
 		var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
@@ -55,14 +55,14 @@ module.exports = {
 		if (upgrader) {
 			roomUpgrader.run(upgrader, needyExtensions, drops, ruins)
 		} else {
-			util.spawnCreep(roomName + "_Upgrader", room.energyAvailable >= 1300 ? {w:5,c:5,m:10} : room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+			util.spawnCreep(roomName + "_Upgrader", room.energyAvailable >= 1300 ? {w:5,c:5,m:roaded ? 5 : 10} : room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 		}
 			
 		var upgrader2 = Game.creeps[roomName + "_Upgrader2"]
 		if (upgrader2) {
 			roomUpgrader.run2(upgrader2, needyExtensions, towers, drops, ruins)
 		} else if (upgrader && upgrader.hits > 500 && miner && miner.hits > 500) {
-			util.spawnCreep(roomName + "_Upgrader2", room.energyCapacityAvailable >= 1300 ? {w:5,c:5,m:10} : room.energyCapacityAvailable >= 750 ? {c:3,m:6,w:3} : room.energyCapacityAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+			util.spawnCreep(roomName + "_Upgrader2", room.energyCapacityAvailable >= 1300 ? {w:5,c:5,m:roaded ? 5 : 10} : room.energyCapacityAvailable >= 750 ? {c:3,m:6,w:3} : room.energyCapacityAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 		}
 		
 		if (sources.length > 1) {
@@ -80,7 +80,7 @@ module.exports = {
 					miner2.harvest(energy)
 				}
 			} else {
-				util.spawnCreep(roomName + "_Miner2", room.energyCapacityAvailable >= 750 ? {w:5,m:5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Miner2", room.energyCapacityAvailable >= 750 ? {w:5,m:roaded ? 3 : 5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
 			}
 		}
 		
