@@ -23,7 +23,7 @@ module.exports = {
 		}
 		
 	},
-	gather(creep){
+	gather(creep, link){
 		
 		if (util.cower(creep)) return
 		
@@ -47,10 +47,10 @@ module.exports = {
 				return
 			}
 			
-			if (creep.pos.getRangeTo(creep.room.storage) > 1) {
-				creep.moveTo(creep.room.storage, {reusePath: 10})
+			if (creep.pos.getRangeTo(link) > 1) {
+				creep.moveTo(link, {reusePath: 10})
 			} else {
-				creep.transfer(creep.room.storage, RESOURCE_ENERGY)
+				creep.transfer(link, RESOURCE_ENERGY)
 			}
 		}
 	}
