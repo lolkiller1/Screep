@@ -232,11 +232,7 @@ if (!Game.creeps["dangerGather2"] && !spawning) {
 
 }
 
-if (!Game.creeps["dangerGather3"] && !spawning) {
-	util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
-	spawning = true
 
-}
 
 
 if (!Game.creeps["waller"] && !spawning) {
