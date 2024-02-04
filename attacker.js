@@ -15,7 +15,7 @@ module.exports = {
 		
 		if (friendly) {
 			creep.heal(friendly)
-		} else {
+		} else if (creep.hits<creep.hitsMax) {
 			creep.heal(creep)
 		}
 			
