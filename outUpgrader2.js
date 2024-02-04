@@ -45,6 +45,18 @@ module.exports = {
 			util.gatherFromEnergy(creep)
 		} else {
 			var spot = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES)
+			
+			if (!spot) {
+				spot = creep.room.controller 
+				if (creep.pos.getRangeTo(spot) > 3) {
+					creep.moveTo(spot)
+				} else {
+					creep.upgradeController(spot)
+				}
+				return
+			}
+			
+			
 			if (creep.pos.getRangeTo(spot) > 3) {
 				creep.moveTo(spot)
 			} else {
