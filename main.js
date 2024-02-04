@@ -36,112 +36,118 @@ for(const i in Memory.creeps) {
 			delete Memory.creeps[i]
 			continue
 		}
+		
+		var creep = Game.creeps[i]
 
-		if (Game.creeps[i].name == "tess") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess2") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess2") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess3") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess3") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess4") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess4") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess5") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess5") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess6") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess6") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess7") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess7") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "tess8") {
-			tess.run(Game.creeps[i])
+		if (creep.name == "tess8") {
+			tess.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "name") {
-			if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
-				name.run(Game.creeps[i])
+		if (creep.name == "name") {
+			if (creep.room.energyAvailable < creep.room.energyCapacityAvailable) {
+				name.run(creep)
 			} else {
-				builder.run(Game.creeps[i])
+				builder.run(creep)
 			}
 		
 		}
 		
-		if (Game.creeps[i].name == "builder") {
-			builder.run(Game.creeps[i])
+		if (creep.name == "builder") {
+			builder.run(creep)
 		}
 	
-		if (Game.creeps[i].name == "name2") {
-			if (Game.creeps[i].room.energyAvailable < Game.creeps[i].room.energyCapacityAvailable) {
-				name.run(Game.creeps[i])
+		if (creep.name == "name2") {
+			if (creep.room.energyAvailable < creep.room.energyCapacityAvailable) {
+				name.run(creep)
 			} else {
-				builder.run(Game.creeps[i])
+				builder.run(creep)
 			}
 		}
 	
-		if (Game.creeps[i].name == "name3") {
-			filler.run(Game.creeps[i])
+		if (creep.name == "name3") {
+			filler.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "miner1") {
-			miner.run(Game.creeps[i])
+		if (creep.name == "miner1") {
+			miner.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "miner2") {
-			miner.run(Game.creeps[i])
+		if (creep.name == "miner2") {
+			miner.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "claimer") {
-			claimer.run(Game.creeps[i])
+		if (creep.name == "claimer") {
+			claimer.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "outUpgrader") {
-			outUpgrader.run(Game.creeps[i])
+		if (creep.name == "outUpgrader") {
+			outUpgrader.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "outUpgrader2" || Game.creeps[i].name == "outUpgrader22" || Game.creeps[i].name == "outUpgrader23" || Game.creeps[i].name == "outUpgrader24" || Game.creeps[i].name == "outUpgrader3") {
-			outUpgrader2.run(Game.creeps[i])
+		if (creep.name == "outUpgrader2" || creep.name == "outUpgrader22" || creep.name == "outUpgrader23" || creep.name == "outUpgrader24" || creep.name == "outUpgrader3") {
+			outUpgrader2.run(creep)
 		}
 		
 
 		
-		if (Game.creeps[i].name == "outUpgraderB") {
-			outUpgrader.build(Game.creeps[i])
+		if (creep.name == "outUpgraderB") {
+			outUpgrader.build(creep)
 		}
 		
-		if (Game.creeps[i].name == "outUpgrader2B") {
-			outUpgrader2.build(Game.creeps[i])
+		if (creep.name == "outUpgrader2B") {
+			outUpgrader2.build(creep)
 		}
 		
-		if (Game.creeps[i].name == "outUpgrader3B") {
-			outUpgrader3.build(Game.creeps[i])
+		if (creep.name == "outUpgrader3B") {
+			outUpgrader3.build(creep)
 		}
 		
-		if (Game.creeps[i].name == "tempFiller") {
-			filler.run(Game.creeps[i])
+		if (creep.name == "tempFiller") {
+			filler.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "tessTheKiller" || Game.creeps[i].name == "tessTheKiller2") {
-			attacker.run(Game.creeps[i])
+		if (creep.name == "tessTheKiller" || creep.name == "tessTheKiller2") {
+			attacker.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "dangerMiner" || Game.creeps[i].name == "dangerMiner2") {
-			dangerMiner.run(Game.creeps[i])
+		if (creep.name == "dangerMiner" || creep.name == "dangerMiner2") {
+			dangerMiner.run(creep)
 		}
 		
-		if (Game.creeps[i].name == "dangerGather" || Game.creeps[i].name == "dangerGather2" || Game.creeps[i].name == "dangerGather3") {
-			dangerMiner.gather(Game.creeps[i])
+		if (creep.name == "dangerGather" || creep.name == "dangerGather2" || creep.name == "dangerGather3") {
+			dangerMiner.gather(creep)
+		}
+		
+		if (creep.name == "waller") {
+			waller.run(creep)
 		}
 	
 	} catch (error) {
@@ -151,7 +157,7 @@ for(const i in Memory.creeps) {
 }
 
 if (!Game.creeps["waller"]) {
-	util.spawnCreep("waller", {c:2,m:2,w:2}, {status:"harvesting"},'E5N57')
+	util.spawnCreep("waller", {c:2,m:4,w:2}, {status:"harvesting"},'E5N57')
 }
 
 if (!Game.creeps["dangerGather"]) {
