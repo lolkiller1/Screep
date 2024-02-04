@@ -2,9 +2,7 @@ var util = require("util")
 
 
 module.exports = {
-	run(creep){
-		if (util.cower(creep)) return
-		
+	run(creep){		
 		if (creep.room.name == "E5N57") {
 			creep.moveTo(20,49, {reusePath: 20})
 			return
@@ -12,8 +10,9 @@ module.exports = {
 		
 		if (creep.hits < creep.hitsMax){
 			creep.heal(creep)
-			return
 		}
+		
+		if (util.cower(creep)) return
 		
 		var source = creep.pos.findClosestByPath(FIND_SOURCES)
 		
