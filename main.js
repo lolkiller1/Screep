@@ -33,6 +33,8 @@ room.run("E6N58", {roaded:false})
 room.run("E6N57", {roaded:true})
 room.run("E7N58", {roaded:true})
 room.run("E7N57", {roaded:true})
+room.run("E8N57", {roaded:false})
+room.run("E8N59", {roaded:false})
 
 var spawn = Game.spawns["E5N57"]
 
@@ -82,8 +84,6 @@ for(const i in Memory.creeps) {
 		if (creep.name == "outUpgrader2" || creep.name == "outUpgrader22" || creep.name == "outUpgrader23" || creep.name == "outUpgrader24" || creep.name == "outUpgrader3") {
 			outUpgrader2.run(creep)
 		}
-		
-
 		
 		if (creep.name == "outUpgraderB") {
 			outUpgrader.build(creep)
@@ -215,7 +215,7 @@ if (!Game.creeps["waller"] && !spawning) {
 if (!Game.creeps["claimer"]) {
 	util.spawnCreep("claimer", {claim:1,m:1}, {status:"harvesting"},'E7N58')
 }
-*/
+
 
 if (!Game.creeps["outUpgrader"]) {
 	util.spawnCreep("outUpgrader", {w:3,c:3,m:6}, {status:"harvesting"},'E7N57')
@@ -232,3 +232,5 @@ if (!Game.creeps["outUpgrader2"]) {
 if (!Game.creeps["outUpgrader2B"]) {
 	util.spawnCreep("outUpgrader2B", {w:4,c:4,m:8}, {status:"harvesting"},'E7N58')
 }
+
+*/
