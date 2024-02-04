@@ -6,7 +6,7 @@ module.exports = {
 		if (util.cower(creep)) return
 		
 		if (creep.room.name == "E5N57") {
-			creep.moveTo(20,49)
+			creep.moveTo(20,49, {reusePath: 20})
 			return
 		}
 		
@@ -31,7 +31,7 @@ module.exports = {
 		
 		if (creep.memory.status == "harvesting") {
 			if (creep.room.name == "E5N57") {
-				creep.moveTo(20,49)
+				creep.moveTo(20,49, {reusePath: 20})
 				return
 			}
 			
@@ -43,12 +43,12 @@ module.exports = {
 			
 		} else {
 			if (creep.room.name == "E5N56") {
-				creep.moveTo(22,0)
+				creep.moveTo(22,0, {reusePath: 20})
 				return
 			}
 			
 			if (creep.pos.getRangeTo(creep.room.storage) > 1) {
-				creep.moveTo(creep.room.storage)
+				creep.moveTo(creep.room.storage, {reusePath: 10})
 			} else {
 				creep.transfer(creep.room.storage, RESOURCE_ENERGY)
 			}

@@ -27,7 +27,7 @@ module.exports = {
 			}
 		} else {
 			if (creep.pos.getRangeTo(spot) > 3) {
-				creep.moveTo(spot)
+				creep.moveTo(spot, {reusePath: 20})
 			} else {
 				creep.repair(spot)
 			}
