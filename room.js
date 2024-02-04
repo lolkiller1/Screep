@@ -2,6 +2,7 @@ var util = require("util")
 var roomTask = require("roomTask")
 var roomUpgrader = require("roomUpgrader")
 var tower = require("tower")
+var waller = require("waller")
 var _ = require("lodash")
 
 module.exports = {
@@ -58,9 +59,9 @@ module.exports = {
 		}
 		
 		if (roomLevel >= 4) {
-			var waller = Game.creeps[roomName + "_Waller"]
-			if (waller) {
-				waller.run(waller)
+			var w = Game.creeps[roomName + "_Waller"]
+			if (w) {
+				waller.run(w)
 			} else {
 				util.spawnCreep(roomName + "_Waller", {w:2,c:2,m:4},{status:"harvesting"},roomName)
 			}
