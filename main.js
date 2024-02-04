@@ -161,13 +161,13 @@ if (!Game.creeps["builder"] && !spawning) {
 }
 
 if (!Game.creeps["tess"] && !spawning) {
-	util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+	util.spawnCreep("tess",  {m:12,w:10,c:2}, {status:"harvesting"}, 'E5N57')
 	spawning = true
 
 }
 
 if (!Game.creeps["tess2"] && !spawning) {
-	util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+	util.spawnCreep("tess2", {m:12,w:10,c:2}, {status:"harvesting"}, 'E5N57')
 	spawning = true
 
 }
