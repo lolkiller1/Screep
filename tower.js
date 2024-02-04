@@ -23,7 +23,7 @@ module.exports = {
 			if (roads[0]) {
 				tower.repair(roads[0])
 			}
-		} else if (roads.length > 0) {
+		} else if (roads && roads.length > 0) {
 			for (var i in roads) {
 				if (roads[i].hits < 5000) {
 					tower.repair(roads[i])
