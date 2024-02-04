@@ -31,7 +31,7 @@ tower.run(myTower2)
 
 room.run("E6N58", {roaded:false})
 room.run("E6N57", {roaded:true})
-room.run("E7N58", {roaded:false})
+room.run("E7N58", {roaded:true})
 room.run("E7N57", {roaded:true})
 
 var spawn = Game.spawns["E5N57"]
