@@ -24,17 +24,11 @@ var myTower2 = Game.getObjectById("65b198c63d017d635f88c752")
 tower.run(myTower)
 tower.run(myTower2)
 
-console.log(Game.cpu.getUsed())
 room.run("E6N59")
-console.log(Game.cpu.getUsed())
 room.run("E6N58")
-console.log(Game.cpu.getUsed())
 room.run("E6N57")
-console.log(Game.cpu.getUsed())
 room.run("E7N58")
-console.log(Game.cpu.getUsed())
 room.run("E7N57")
-console.log(Game.cpu.getUsed())
 
 for(const i in Memory.creeps) {
 	try {
