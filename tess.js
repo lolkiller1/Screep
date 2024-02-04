@@ -8,7 +8,7 @@ module.exports = {
 			if (tess.pos.getRangeTo(link) > 1) {
 				tess.moveTo(link)
 			} else {
-				tess.withdraw(spot, RESOURCE_ENERGY)
+				tess.withdraw(link, RESOURCE_ENERGY)
 			}
 		} else {
 			var spot = tess.room.controller 
