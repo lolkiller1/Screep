@@ -16,9 +16,10 @@ module.exports = {
 		var needyExtensions = util.getExtensionsInNeed(extensions)
 		var drops = roomTask.getDrops(room)
 		var ruins = roomTask.getRuins(room)
+		var roads = roomTask.getRoads(room)
 				
 		for (var t in towers) {
-			tower.run(towers[t])
+			tower.run(towers[t], roads)
 		}
 		
 		var miner = Game.creeps[roomName + "_Miner"]

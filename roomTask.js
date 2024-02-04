@@ -28,6 +28,17 @@ module.exports = {
 		util.save(room,"extensions",extensions)
 		return extensions
 	},
+	getRoads(room) {
+		var roads
+		if (Game.time % 20 != 0 && Memory[room.name].roads) {
+			return util.load(room,"roads")
+		}
+		
+		Memory[room.name].roads = []
+		roads = room.find(FIND_STRUCTURES, {filter: function(e){return e.structureType == STRUCTURE_ROAD && e.hits < 1000}})
+		util.save(room,"roads",roads)
+		return roads
+	},
 	getDrops(room) {
 		return drops = room.find(FIND_DROPPED_RESOURCES, {filter: function(e) {return e.resourceType == RESOURCE_ENERGY && e.amount > 250}})
 	},
