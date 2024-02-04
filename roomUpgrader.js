@@ -43,7 +43,7 @@ module.exports = {
 		if (creep.memory.status == "harvesting") {
 			util.gather(creep, drops, ruins)
 		} else {
-			towers = _.filter(towers, {filter: function(object) {return object.store.getFreeCapacity(RESOURCE_ENERGY) > 0}})
+			towers = _.filter(towers, function(object) {return object.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
 			var tower = towers[0] ? towers[0] : false
 			
 			var spot = false
