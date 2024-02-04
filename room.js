@@ -34,7 +34,7 @@ module.exports = {
 		}
 		
 		var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
-		if (constructionSpots[0]) {
+		if (constructionSpots.length > 0) {
 			var builder = Game.creeps[roomName + "_Builder"]
 			if (builder) {
 				roomUpgrader.build(builder, drops, ruins)
