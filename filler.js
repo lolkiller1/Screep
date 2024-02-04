@@ -7,7 +7,17 @@ module.exports = {
 		if (creep.memory.status == "harvesting") {
 			var spot = creep.pos.findClosestByPath(FIND_DROPPED_RESOURCES, {filter: function(ob){return ob.resourceType == RESOURCE_ENERGY && ob.amount > 200}})
 			
-			if (!spot) return
+			if (!spot) {
+				spot = Game.getObjectById("65bf22a6682254d4499b95d0")
+				if (creep.pos.getRangeTo(spot) > 1) {
+					creep.moveTo(spot)
+				} else {
+					creep.withdraw(spot, RESOURCE_ENERGY)
+				}
+			return
+			}
+			
+			
 			
 			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
