@@ -193,15 +193,17 @@ if (!Game.creeps["dangerMiner"] && !spawning) {
 }
 
 if (!Game.creeps["dangerGather"] && !spawning) {
-	util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
+	util.spawnCreep("dangerGather", {c:16,m:16}, {status:"harvesting"},'E5N57')
 	spawning = true
 }
 
+/*
 if (!Game.creeps["dangerGather2"] && !spawning) {
 	util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
 	spawning = true
 
 }
+*/
 
 if (!Game.creeps["waller"] && !spawning) {
 	util.spawnCreep("waller", {c:1,m:2,w:1}, {status:"harvesting"},'E5N57')
