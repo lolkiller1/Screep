@@ -142,7 +142,7 @@ for(const i in Memory.creeps) {
 		}
 		
 		if (creep.name == "dangerGather" || creep.name == "dangerGather2" || creep.name == "dangerGather3") {
-			dangerMiner.gather(creep)
+			dangerMiner.gather(creep, link2)
 		}
 		
 		if (creep.name == "waller") {
