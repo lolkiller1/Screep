@@ -64,7 +64,7 @@ module.exports = {
 		}
 		
 		if (sources.length > 1) {
-			var miner2 = Game.creeps[roomName + "_Miner"]
+			var miner2 = Game.creeps[roomName + "_Miner2"]
 			if (miner2) {
 				if (miner2.memory.source == null) {
 					var theId = miner2.pos.findClosestByRange(FIND_SOURCES).id 
