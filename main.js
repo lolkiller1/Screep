@@ -21,6 +21,11 @@ if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 var myTower = Game.getObjectById("65ae09ade53e4a11e1675b1e")
 var myTower2 = Game.getObjectById("65b198c63d017d635f88c752")
 
+var link1 = Game.getObjectById("65bf22a6682254d4499b95d0")
+var link2 = Game.getObjectById("65bf2dcab1cdfc13c8096d3f")
+
+if (Game.time % 5 == 0) link1.transferEnergy(link2)
+
 tower.run(myTower)
 tower.run(myTower2)
 
