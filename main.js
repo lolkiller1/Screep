@@ -24,7 +24,7 @@ var myTower2 = Game.getObjectById("65b198c63d017d635f88c752")
 var link1 = Game.getObjectById("65bf22a6682254d4499b95d0")
 var link2 = Game.getObjectById("65bf2dcab1cdfc13c8096d3f")
 
-if (Game.time % 5 == 0) link1.transferEnergy(link2)
+if (Game.time % 5 == 0) link2.transferEnergy(link1)
 
 tower.run(myTower)
 tower.run(myTower2)
