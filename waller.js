@@ -3,14 +3,10 @@ var util = require("util")
 module.exports = {
 	run(creep, drops, ruins){
 		var ramparts = this.getRamparts(creep)
-		
-		//console.log(ramparts)
-		
+				
 		if (!creep.memory.curRamp) {
 			creep.memory.curRamp = 0
 		}
-		
-		//console.log(creep.memory.curRamp)
 		
 		var storageStatus = util.getCreepStorageStatus(creep)
 		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
