@@ -20,7 +20,7 @@ module.exports = {
 				spot = name.pos.findClosestByPath(extensions)
 				
 				if (!spot) {
-					creep.memory.status = "harvesting"
+					name.memory.status = "harvesting"
 					return
 				}
 				
