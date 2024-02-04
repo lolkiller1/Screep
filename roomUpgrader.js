@@ -41,6 +41,7 @@ module.exports = {
 		util.setStatus(creep)
 		
 		if (creep.memory.status == "harvesting") {
+			console.log(drops)
 			util.gather(creep, drops, ruins)
 		} else {
 			towers = _.filter(towers, function(object) {return object.store.getFreeCapacity(RESOURCE_ENERGY) > 0})
