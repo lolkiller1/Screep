@@ -61,7 +61,7 @@ module.exports = {
 		if (roomLevel >= 4) {
 			var w = Game.creeps[roomName + "_Waller"]
 			if (w) {
-				waller.run(w)
+				waller.run(w, drops, ruins)
 			} else {
 				util.spawnCreep(roomName + "_Waller", {w:2,c:2,m:4},{status:"harvesting"},roomName)
 			}

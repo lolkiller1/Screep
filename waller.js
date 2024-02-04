@@ -1,16 +1,16 @@
 var util = require("util")
 
 module.exports = {
-	run(creep){
+	run(creep, drops, ruins){
 		var ramparts = this.getRamparts(creep)
 		
-		console.log(ramparts)
+		//console.log(ramparts)
 		
 		if (!creep.memory.curRamp) {
 			creep.memory.curRamp = 0
 		}
 		
-		console.log(creep.memory.curRamp)
+		//console.log(creep.memory.curRamp)
 		
 		var storageStatus = util.getCreepStorageStatus(creep)
 		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
@@ -27,7 +27,7 @@ module.exports = {
 			if (creep.room.storage) {
 				util.gatherFromStorage(creep)
 			} else {
-				util.gather(creep)
+				util.gather(creep, drops, ruins)
 			}
 		} else {
 			if (creep.pos.getRangeTo(spot) > 3) {
