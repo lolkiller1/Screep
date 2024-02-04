@@ -5,7 +5,7 @@ module.exports = {
 		
 		if (creep.room.name == "E7N57") {
 			creep.moveTo(49,28)
-			return;
+			return
 		}
 		
 		util.setStatus(creep)
