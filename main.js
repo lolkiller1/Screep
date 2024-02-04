@@ -163,12 +163,12 @@ for(const i in Memory.creeps) {
 var spawning = spawn.spawning != null
 
 if (!Game.creeps["name"] && !spawning) {
-	util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
+	util.spawnCreep("name",  {m:12,c:12}, {status:"harvesting"}, 'E5N57')
 	spawning = true
 }
 
 if (!Game.creeps["name2"] && !spawning) {
-	util.spawnCreep("name2", {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
+	util.spawnCreep("name2", {m:12,c:12}, {status:"harvesting"}, 'E5N57')
 	spawning = true
 }
 
