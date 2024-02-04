@@ -13,7 +13,7 @@ module.exports = {
 				var lowestAmt = 999999999
 				var hightest = 0
 				var highestAmt = -1 
-				var creep = Game.creeps[w + "_Miner"] ? Game.creeps[w + "_Miner"] : Game.creeps[w + "_Upgrader"]
+				var creep = Game.creeps[myRooms[w] + "_Miner"] ? Game.creeps[w + "_Miner"] : Game.creeps[w + "_Upgrader"]
 				var ramps = creep.room.find(FIND_STRUCTURES, {filter: {structureType:STRUCTURE_RAMPART}})
 				for (var i in ramps) {
 					var ramp = ramps[i]
@@ -26,7 +26,7 @@ module.exports = {
 						highestAmt = ramp.hits
 					}
 				}
-				console.log("Room: "+ w + ", lowest: " + lowestAmt + ", highest: " + highestAmt)
+				console.log("Room: "+ myRooms[w] + ", lowest: " + lowestAmt + ", highest: " + highestAmt)
 			}
 		}
 }
