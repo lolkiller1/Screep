@@ -9,7 +9,7 @@ module.exports = {
 		if (creep.memory.status == "harvesting" || !spot) {
 			util.gatherFromStorage(creep)
 		} else {
-			if (creep.pos.getRangeTo(spot) > 1) {
+			if (creep.pos.getRangeTo(spot) > 3) {
 				creep.moveTo(spot)
 			} else {
 				creep.build(spot)
