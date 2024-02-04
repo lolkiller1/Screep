@@ -35,7 +35,7 @@ module.exports = {
 		}
 		
 		Memory[room.name].roads = []
-		roads = room.find(FIND_STRUCTURES, {filter: function(e){return e.structureType == STRUCTURE_ROAD && e.hits < 2000}})
+		roads = room.find(FIND_STRUCTURES, {filter: function(e){return e.structureType == STRUCTURE_ROAD && e.hits / e.hitsMax < .2}})
 		util.save(room,"roads",roads)
 		return roads
 	},
