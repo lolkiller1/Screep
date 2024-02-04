@@ -43,6 +43,7 @@ module.exports = {
 		var ruin
 		
 		if (drops && drops.length > 0) {
+			console.log("drops 0" + drops[0])
 			drop = creep.pos.findClosestByPath(drops)
 		}
 		
