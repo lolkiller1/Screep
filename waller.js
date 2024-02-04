@@ -2,12 +2,18 @@ var util = require("util")
 
 module.exports = {
 	run(creep){
-		util.setStatus(creep)
+		var ramparts = this.getRamparts(creep)
 		
-		var ramparts = creep.room.find(FIND_STRUCTURES, {filter:{structureType:STRUCTURE_RAMPART}})
+		var storageStatus = this.getCreepStorageStatus(creep)
+		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
+			this.setNextRampart(creep)
+			creep.memory.status = "working"
+		} else if ((storageStatus == "EMPTY" && creep.memory.status == "working") || creep.memory.status == null) {
+			creep.memory.status = "harvesting"
+		}
 		
 		
-		var spot = creep.pos.findClosestByPath(ramparts)
+		var spot = Game.getObjectById(creep.memory.ramps[creep.memory.curRamp])
 		
 		if (creep.memory.status == "harvesting" || !spot) {
 			util.gatherFromStorage(creep)
@@ -19,6 +25,35 @@ module.exports = {
 			}
 		}
 		
+	},
+	getRamparts(creep) {
+		var ramps = []
+		if (Game.time % 10 != 0 && creep.memory.ramps != null) {
+			for (var i in creep.memory.ramps) {
+				ramps.push(Game.getObjectById(creep.memory.ramps[i]))
+			}
+			return ramps
+		}
+		
+		creep.memory.ramps = []
+		ramps = creep.room.find(FIND_STRUCTURES, {filter: { structureType: STRUCTURE_RAMPART }})
+		for (var i in ramps) {
+			creep.memory.ramps.push(ramps.id)
+		}
+		return ramps
+	},
+	setNextRampart(creep, ramps) {
+		if (!creep.memory.curRamp) {
+			creep.memory.curRamp = 0
+			return
+		}
+		
+		var cur = creep.memory.curRamp
+		cur += 1
+		if (cur > ramps.length - 1) {
+			cur = 0
+		}
+		creep.memory.curRamp = cur
 	}
 	
 }
