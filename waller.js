@@ -4,7 +4,7 @@ module.exports = {
 	run(creep){
 		var ramparts = this.getRamparts(creep)
 		
-		var storageStatus = this.getCreepStorageStatus(creep)
+		var storageStatus = util.getCreepStorageStatus(creep)
 		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
 			this.setNextRampart(creep)
 			creep.memory.status = "working"
