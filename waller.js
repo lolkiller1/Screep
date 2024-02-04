@@ -10,6 +10,8 @@ module.exports = {
 			creep.memory.curRamp = 0
 		}
 		
+		console.log(creep.memory.curRamp)
+		
 		var storageStatus = util.getCreepStorageStatus(creep)
 		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
 			this.setNextRampart(creep)
