@@ -38,7 +38,7 @@ module.exports = {
 		creep.memory.ramps = []
 		ramps = creep.room.find(FIND_STRUCTURES, {filter: { structureType: STRUCTURE_RAMPART }})
 		for (var i in ramps) {
-			creep.memory.ramps.push(ramps.id)
+			creep.memory.ramps.push(ramps[i].id)
 		}
 		return ramps
 	},
