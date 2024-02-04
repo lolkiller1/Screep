@@ -3,7 +3,6 @@ var roomTask = require("roomTask")
 var roomUpgrader = require("roomUpgrader")
 var tower = require("tower")
 var waller = require("waller")
-var _ = require("lodash")
 
 module.exports = {
 	run(roomName){
