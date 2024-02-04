@@ -175,7 +175,7 @@ if (!Game.creeps["dangerGather3"]) {
 }
 
 if (!Game.creeps["dangerMiner"]) {
-	util.spawnCreep("dangerMiner", {w:10,m:10}, {},'E5N57')
+	util.spawnCreep("dangerMiner", {w:10,m:10,h:1}, {},'E5N57')
 
 }
 

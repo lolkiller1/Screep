@@ -10,6 +10,7 @@ module.exports = {
 			return
 		}
 		
+		creep.heal(creep)
 		var source = creep.pos.findClosestByPath(FIND_SOURCES)
 		
 		if (creep.pos.getRangeTo(source) > 1) {
