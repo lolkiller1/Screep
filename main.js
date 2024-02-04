@@ -30,6 +30,8 @@ room.run("E6N57")
 room.run("E7N58")
 room.run("E7N57")
 
+var spawn = Game.spawns["E5N57"]
+
 for(const i in Memory.creeps) {
 	try {
 		if (Game.creeps[i] == undefined && i != "waller" && i.search("Waller") == -1) {
@@ -156,74 +158,75 @@ for(const i in Memory.creeps) {
 	
 }
 
-if (!Game.creeps["waller"]) {
-	util.spawnCreep("waller", {c:2,m:4,w:2}, {status:"harvesting"},'E5N57')
-}
-
-if (!Game.creeps["dangerGather"]) {
-	util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
-}
-
-if (!Game.creeps["dangerGather2"]) {
-	util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
-
-}
-
-if (!Game.creeps["dangerGather3"]) {
-	util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
-
-}
-
-if (!Game.creeps["dangerMiner"]) {
-	util.spawnCreep("dangerMiner", {w:10,m:10,h:1}, {},'E5N57')
-
-}
-
-if (!Game.creeps["tessTheKiller"]) {
-	util.spawnCreep("tessTheKiller",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
-
-}
-
-if (!Game.creeps["tessTheKiller2"]) {
-	util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
-
-}
-
-if (!Game.creeps["builder"]) {
-	util.spawnCreep("builder",  {c:4,w:6,m:10}, {}, 'E5N57')
-
-}
-
-if (!Game.creeps["miner1"]) {
-	util.spawnCreep("miner1", {m:5,w:5}, {source:"5bbcad319099fc012e636ce8", spot:{x:36,y:10}}, 'E5N57')
-
-}
-
-if (!Game.creeps["miner2"]) {
-	util.spawnCreep("miner2", {m:5,w:5}, {source:"5bbcad319099fc012e636ce7", spot:{x:30,y:6}}, 'E5N57')
-
-}
-
-if (!Game.creeps["name3"]) {
-	util.spawnCreep("name3", {m:10,c:10}, {status:"harvesting"}, 'E5N57')
-
-}
-
-if (!Game.creeps["tess"]) {
-	util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
-
-}
-
-if (!Game.creeps["tess2"]) {
-	util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
-
-}
-
-if (!Game.creeps["name"]) {
+if (!Game.creeps["name"] && spawn.spawning != null) {
 	console.log("here")
 	util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
 }
 
-if (!Game.creeps["name2"]) {
+if (!Game.creeps["name2"] && spawn.spawning != null) {
 	util.spawnCreep("name2", {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
 }
+
+if (!Game.creeps["miner1"] && spawn.spawning != null) {
+	util.spawnCreep("miner1", {m:5,w:5}, {source:"5bbcad319099fc012e636ce8", spot:{x:36,y:10}}, 'E5N57')
+
+}
+
+
+if (!Game.creeps["miner2"] && spawn.spawning != null) {
+	util.spawnCreep("miner2", {m:5,w:5}, {source:"5bbcad319099fc012e636ce7", spot:{x:30,y:6}}, 'E5N57')
+
+}
+
+if (!Game.creeps["name3"] && spawn.spawning != null) {
+	util.spawnCreep("name3", {m:10,c:10}, {status:"harvesting"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tess"] && spawn.spawning != null) {
+	util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tess2"] && spawn.spawning != null) {
+	util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tessTheKiller"] && spawn.spawning != null) {
+	util.spawnCreep("tessTheKiller",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+
+}
+
+if (!Game.creeps["tessTheKiller2"] && spawn.spawning != null) {
+	util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+
+}
+
+if (!Game.creeps["dangerMiner"] && spawn.spawning != null) {
+	util.spawnCreep("dangerMiner", {w:10,m:10,h:1}, {},'E5N57')
+
+}
+
+if (!Game.creeps["dangerGather"] && spawn.spawning != null) {
+	util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
+}
+
+if (!Game.creeps["dangerGather2"] && spawn.spawning != null) {
+	util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
+
+}
+
+if (!Game.creeps["dangerGather3"] && spawn.spawning != null) {
+	util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
+
+}
+
+
+if (!Game.creeps["waller"] && spawn.spawning != null) {
+	util.spawnCreep("waller", {c:2,m:4,w:2}, {status:"harvesting"},'E5N57')
+}
+
+
+
+
