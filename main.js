@@ -251,3 +251,7 @@ if (!Game.creeps["waller"] && !spawning) {
 if (!Game.creeps["claimer"]) {
 	util.spawnCreep("claimer", {claim:1,m:1}, {status:"harvesting"},'E7N57')
 }
+
+if (!Game.creeps["outUpgrader"]) {
+	util.spawnCreep("outUpgrader", {w:1,c:1,m:2}, {status:"harvesting"},'E7N57')
+}
