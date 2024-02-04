@@ -62,7 +62,7 @@ module.exports = {
 			if (w) {
 				waller.run(w, drops, ruins)
 			} else {
-				util.spawnCreep(roomName + "_Waller", {w:2,c:2,m:4},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Waller", {w:2,c:1,m:3},{status:"harvesting"},roomName)
 			}
 		}
 	}
