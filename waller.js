@@ -4,6 +4,8 @@ module.exports = {
 	run(creep){
 		var ramparts = this.getRamparts(creep)
 		
+		console.log(ramparts)
+		
 		if (!creep.memory.curRamp) {
 			creep.memory.curRamp = 0
 		}
