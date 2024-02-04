@@ -163,7 +163,6 @@ for(const i in Memory.creeps) {
 var spawning = spawn.spawning != null
 
 if (!Game.creeps["name"] && !spawning) {
-	console.log("here")
 	util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
 	spawning = true
 }
