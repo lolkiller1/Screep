@@ -38,7 +38,7 @@ module.exports = {
 		}
 		
 		Memory[room.name].ruins = []
-		ruins = room.find(FIND_RUINS, {filter: { resourceType: RESOURCE_ENERGY }})
+		ruins = room.find(FIND_RUINS, {filter: function(e){return e.store.getUsedCapacity(RESOURCE_ENERGY) > 200}})
 		util.save(room,"ruins",ruins)
 		return ruins
 	}
