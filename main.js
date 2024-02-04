@@ -34,8 +34,10 @@ var spawn = Game.spawns["E5N57"]
 
 for(const i in Memory.creeps) {
 	try {
-		if (Game.creeps[i] == undefined && i != "waller" && i.search("Waller") == -1) {
-			delete Memory.creeps[i]
+		if (Game.creeps[i] == undefined) {
+			if (i != "waller" && i.search("Waller") == -1) {
+			    delete Memory.creeps[i]
+			}
 			continue
 		}
 		
