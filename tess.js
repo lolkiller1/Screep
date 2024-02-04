@@ -1,8 +1,8 @@
 var util = require("util")
 
 module.exports = {
-	run(tess){
-		util.setStatus(tess, link)
+	run(tess, link){
+		util.setStatus(tess)
 		
 		if (tess.memory.status == "harvesting") {
 			if (tess.pos.getRangeTo(link) > 1) {
