@@ -142,8 +142,11 @@ module.exports = {
 		var enemy = creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS)
 		
 		if (enemy && creep.pos.getRangeTo(enemy) < 5) {
+			/*
 			var direction = creep.pos.getDirectionTo(enemy)
 			creep.move(this.getOppositeDirection(direction))
+			*/
+			creep.moveTo(23,2)
 			return true
 		}
 		
