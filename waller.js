@@ -14,7 +14,7 @@ module.exports = {
 		
 		var storageStatus = util.getCreepStorageStatus(creep)
 		if (storageStatus == "FULL" && creep.memory.status == "harvesting") {
-			this.setNextRampart(creep)
+			this.setNextRampart(creep, ramparts)
 			creep.memory.status = "working"
 		} else if ((storageStatus == "EMPTY" && creep.memory.status == "working") || creep.memory.status == null) {
 			creep.memory.status = "harvesting"
@@ -54,11 +54,7 @@ module.exports = {
 		}
 		return ramps
 	},
-	setNextRampart(creep, ramps) {	
-		
-		if (!ramps) return
-	
-	
+	setNextRampart(creep, ramps) {		
 		var cur = creep.memory.curRamp
 		cur += 1
 		if (cur > ramps.length - 1) {
