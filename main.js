@@ -51,16 +51,12 @@ for(const i in Memory.creeps) {
 			tess.run(creep, link1)
 		}
 	
-		if (creep.name == "name") {
+		if (creep.name == "name" || creep.name == "name2") {
 			name.run(creep)
 		}
 		
 		if (creep.name == "builder") {
 			builder.run(creep)
-		}
-	
-		if (creep.name == "name2") {
-			name.run(creep)
 		}
 	
 		if (creep.name == "name3") {
