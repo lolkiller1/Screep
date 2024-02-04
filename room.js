@@ -10,7 +10,7 @@ module.exports = {
 		var roomLevel = room.controller.level
 		var spawn = Game.spawns[roomName]
 		
-		var roaded = opts.roaded ? true : false
+		var roaded = opts && opts.roaded ? true : false
 		
 		roomTask.init(room)
 		var towers = roomTask.getTowers(room)
