@@ -16,7 +16,11 @@ module.exports = {
 		var spot = Game.getObjectById(creep.memory.ramps[creep.memory.curRamp])
 		
 		if (creep.memory.status == "harvesting" || !spot) {
-			util.gatherFromStorage(creep)
+			if (creep.room.storage) {
+				util.gatherFromStorage(creep)
+			} else {
+				util.gather(creep)
+			}
 		} else {
 			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
