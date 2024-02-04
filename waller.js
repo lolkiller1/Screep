@@ -19,7 +19,7 @@ module.exports = {
 			if (creep.room.storage) {
 				util.gatherFromStorage(creep)
 			} else {
-				util.gather(creep,null,null)
+				util.gather(creep,[false],[false])
 			}
 		} else {
 			if (creep.pos.getRangeTo(spot) > 3) {
