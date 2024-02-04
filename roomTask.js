@@ -29,7 +29,7 @@ module.exports = {
 		return extensions
 	},
 	getDrops(room) {
-		return drops = room.find(FIND_DROPPED_RESOURCES, {filter: { resourceType: RESOURCE_ENERGY }})
+		return drops = room.find(FIND_DROPPED_RESOURCES, {filter: function(e) {return e.resourceType == RESOURCE_ENERGY && e.amount > 250}})
 	},
 	getRuins(room) {
 		var ruins
