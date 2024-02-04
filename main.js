@@ -47,36 +47,8 @@ for(const i in Memory.creeps) {
 		
 		var creep = Game.creeps[i]
 
-		if (creep.name == "tess") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess2") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess3") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess4") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess5") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess6") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess7") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "tess8") {
-			tess.run(creep)
+	if (creep.name == "tess" || creep.name == "tess2" || creep.name == "tess3") {
+			tess.run(creep, link2)
 		}
 	
 		if (creep.name == "name") {
