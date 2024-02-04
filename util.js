@@ -147,11 +147,10 @@ module.exports = {
 			creep.move(this.getOppositeDirection(direction))
 			*/
 			if (enemy.pos.x < creep.pos.x) {
-				creep.moveTo(23,2)
-			} else {
 				creep.moveTo(42,11)
+			} else {
+				creep.moveTo(23,2)
 			}
-			
 			
 			return true
 		}
