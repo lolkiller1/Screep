@@ -160,73 +160,89 @@ for(const i in Memory.creeps) {
 	
 }
 
-if (!Game.creeps["name"] && spawn.spawning == null) {
+var spawning = spawn.spawning != null
+
+if (!Game.creeps["name"] && !spawning) {
 	console.log("here")
 	util.spawnCreep("name",  {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
+	spawning = true
 }
 
-if (!Game.creeps["name2"] && spawn.spawning == null) {
+if (!Game.creeps["name2"] && !spawning) {
 	util.spawnCreep("name2", {m:11,w:1,c:10}, {status:"harvesting"}, 'E5N57')
+	spawning = true
 }
 
-if (!Game.creeps["miner1"] && spawn.spawning == null) {
+if (!Game.creeps["miner1"] && !spawning) {
 	util.spawnCreep("miner1", {m:5,w:5}, {source:"5bbcad319099fc012e636ce8", spot:{x:36,y:10}}, 'E5N57')
+	spawning = true
 
 }
 
 
-if (!Game.creeps["miner2"] && spawn.spawning == null) {
+if (!Game.creeps["miner2"] && !spawning) {
 	util.spawnCreep("miner2", {m:5,w:5}, {source:"5bbcad319099fc012e636ce7", spot:{x:30,y:6}}, 'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["name3"] && spawn.spawning == null) {
+if (!Game.creeps["name3"] && !spawning) {
 	util.spawnCreep("name3", {m:10,c:10}, {status:"harvesting"}, 'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["tess"] && spawn.spawning == null) {
+if (!Game.creeps["tess"] && !spawning) {
 	util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["tess2"] && spawn.spawning == null) {
+if (!Game.creeps["tess2"] && !spawning) {
 	util.spawnCreep("tess2", {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["tessTheKiller"] && spawn.spawning == null) {
+if (!Game.creeps["tessTheKiller"] && !spawning) {
 	util.spawnCreep("tessTheKiller",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["tessTheKiller2"] && spawn.spawning == null) {
+if (!Game.creeps["tessTheKiller2"] && !spawning) {
 	util.spawnCreep("tessTheKiller2",  {r:4,m:8,h:4}, {type:"ranged"}, 'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["dangerMiner"] && spawn.spawning == null) {
+if (!Game.creeps["dangerMiner"] && !spawning) {
 	util.spawnCreep("dangerMiner", {w:10,m:11,h:1}, {},'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["dangerGather"] && spawn.spawning == null) {
+if (!Game.creeps["dangerGather"] && !spawning) {
 	util.spawnCreep("dangerGather", {c:15,m:15}, {status:"harvesting"},'E5N57')
+	spawning = true
 }
 
-if (!Game.creeps["dangerGather2"] && spawn.spawning == null) {
+if (!Game.creeps["dangerGather2"] && !spawning) {
 	util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
+	spawning = true
 
 }
 
-if (!Game.creeps["dangerGather3"] && spawn.spawning == null) {
+if (!Game.creeps["dangerGather3"] && !spawning) {
 	util.spawnCreep("dangerGather3", {c:15,m:15}, {status:"harvesting"},'E5N57')
+	spawning = true
 
 }
 
 
-if (!Game.creeps["waller"] && spawn.spawning == null) {
+if (!Game.creeps["waller"] && !spawning) {
 	util.spawnCreep("waller", {c:2,m:4,w:2}, {status:"harvesting"},'E5N57')
+	spawning = true
 }
 
 
