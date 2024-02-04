@@ -22,7 +22,7 @@ module.exports = {
 				util.gather(creep)
 			}
 		} else {
-			if (creep.pos.getRangeTo(spot) > 1) {
+			if (creep.pos.getRangeTo(spot) > 3) {
 				creep.moveTo(spot)
 			} else {
 				creep.repair(spot)
