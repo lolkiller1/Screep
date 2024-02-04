@@ -42,11 +42,11 @@ module.exports = {
 		var drop
 		var ruin
 		
-		if (drops) {
+		if (drops && drops.length > 0) {
 			drop = creep.pos.findClosestByPath(drops)
 		}
 		
-		if (ruins) {
+		if (ruins && ruins.length > 0) {
 			ruin = creep.pos.findClosestByPath(ruins)
 		}
 		
