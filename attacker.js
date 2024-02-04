@@ -6,7 +6,7 @@ module.exports = {
 		var type = creep.memory.type
 		
 		if (creep.room.name == "E5N57") {
-			creep.moveTo(20,49)
+			creep.moveTo(20,49, {reusePath: 20})
 			return
 		}
 	
