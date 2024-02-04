@@ -24,11 +24,11 @@ var myTower2 = Game.getObjectById("65b198c63d017d635f88c752")
 tower.run(myTower)
 tower.run(myTower2)
 
-room.run("E6N59")
-room.run("E6N58")
-room.run("E6N57")
-room.run("E7N58")
-room.run("E7N57")
+room.run("E6N59", {})
+room.run("E6N58", {})
+room.run("E6N57", {})
+room.run("E7N58", {})
+room.run("E7N57", {roaded:true})
 
 var spawn = Game.spawns["E5N57"]
 
