@@ -42,7 +42,7 @@ module.exports = {
 				miner.harvest(energy)
 			}
 		} else {
-			util.spawnCreep(roomName + "_Miner", room.energyCapacityAvailable >= 750 ? {w:5,m:roaded ? 5 : 5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
+			util.spawnCreep(roomName + "_Miner", room.energyCapacityAvailable >= 750 ? {w:5,m:roaded ? 3 : 5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
 		}
 		
 		var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
