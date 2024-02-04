@@ -206,7 +206,7 @@ if (!Game.creeps["tessTheKiller2"] && spawn.spawning != null) {
 }
 
 if (!Game.creeps["dangerMiner"] && spawn.spawning != null) {
-	util.spawnCreep("dangerMiner", {w:10,m:10,h:1}, {},'E5N57')
+	util.spawnCreep("dangerMiner", {w:10,m:11,h:1}, {},'E5N57')
 
 }
 
