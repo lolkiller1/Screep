@@ -191,6 +191,12 @@ if (!Game.creeps["name3"] && !spawning) {
 
 }
 
+if (!Game.creeps["builder"] && !spawning) {
+	util.spawnCreep("builder",  {m:17,w:11,c:6}, {status:"harvesting"}, 'E5N57')
+	spawning = true
+
+}
+
 if (!Game.creeps["tess"] && !spawning) {
 	util.spawnCreep("tess",  {m:10,w:5,c:5}, {status:"harvesting"}, 'E5N57')
 	spawning = true
