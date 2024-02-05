@@ -20,7 +20,7 @@ module.exports = {
 		var spot = Game.getObjectById(creep.memory.ramps[creep.memory.curRamp])
 		
 		if (creep.memory.status == "harvesting" || !spot) {
-			if (creep.room.storage) {
+			if (creep.room.storage && creep.room.storage.store.getUsedCapacity(RESOURCE_ENERGY)) {
 				util.gatherFromStorage(creep)
 			} else {
 				util.gather(creep, drops, ruins)
