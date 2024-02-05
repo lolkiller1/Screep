@@ -13,6 +13,7 @@ var attacker = require("attacker")
 var dangerMiner = require("dangerMiner")
 var waller = require("waller")
 var room = require("room")
+var roomTask = require("roomTask")
 
 if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 	Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
@@ -38,6 +39,11 @@ room.run("E8N59", {roaded:false})
 
 var spawn = Game.spawns["E5N57"]
 
+var mainRoom = Game.rooms.E5N57
+roomTask.init(mainRoom)
+var towers = roomTask.getTowers(mainRoom)
+var extensions = roomTask.getExtensions(mainRoom)
+
 for(const i in Memory.creeps) {
 	try {
 		if (Game.creeps[i] == undefined) {
@@ -54,7 +60,7 @@ for(const i in Memory.creeps) {
 		}
 	
 		if (creep.name == "name" || creep.name == "name2") {
-			name.run(creep)
+			name.run(creep, extensions)
 		}
 		
 		if (creep.name == "builder") {
