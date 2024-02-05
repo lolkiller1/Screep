@@ -1,14 +1,14 @@
 var util = require("util")
 
 module.exports = {
-	run(tess, link){
+	run(tess){
 		util.setStatus(tess)
 		
 		if (tess.memory.status == "harvesting") {
-			if (tess.pos.getRangeTo(link) > 1) {
-				tess.moveTo(link)
+			if (tess.pos.getRangeTo(tess.room.storage) > 1) {
+				tess.moveTo(tess.room.storage)
 			} else {
-				tess.withdraw(link, RESOURCE_ENERGY)
+				tess.withdraw(tess.room.storage, RESOURCE_ENERGY)
 			}
 		} else {
 			var spot = tess.room.controller 
