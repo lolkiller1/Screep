@@ -42,10 +42,6 @@ module.exports = {
 		var drop
 		var ruin
 		
-		if (drops && drops.length > 0) {
-			drop = creep.pos.findClosestByPath(drops)
-		}
-		
 		if (ruins && ruins.length > 0) {
 			ruin = creep.pos.findClosestByPath(ruins)
 		}
@@ -57,6 +53,10 @@ module.exports = {
 				creep.withdraw(ruin, RESOURCE_ENERGY)
 			}
 			return
+		}
+		
+		if (drops && drops.length > 0) {
+			drop = creep.pos.findClosestByPath(drops)
 		}
 		
 		if (drop) {
