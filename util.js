@@ -68,7 +68,11 @@ module.exports = {
 			return
 		}
 		
-		this.gatherFromEnergy(creep)
+		if (creep.room.storage && creep.room.store && creep.room.store.getUsedCapacity(RESOURCE_ENERGY) > 5000) {
+			this.gatherFromStorage(creep)
+		} else {
+			this.gatherFromEnergy(creep)
+		}		
 	},
 	gatherFromEnergy(creep, spot) {
 		var energy

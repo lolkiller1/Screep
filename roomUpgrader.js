@@ -74,6 +74,23 @@ module.exports = {
 			}
 		}
 	},
+	run3(creep, extensions, towers, drops, ruins){
+		var storageStatus = util.getCreepStorageStatus(creep)
+		util.setStatus(creep)
+		
+		if (creep.memory.status == "harvesting") {
+			util.gather(creep, drops, ruins)
+		} else {
+			var spot = false
+			
+			if (creep.pos.getRangeTo(creep.room.controller) > 3) {
+				creep.moveTo(creep.room.controller)
+			} else {
+				creep.upgradeController(creep.room.controller)
+			}
+			
+		}
+	},
 	build(creep, drops, ruins){
 		var storageStatus = util.getCreepStorageStatus(creep)
 		util.setStatus(creep)

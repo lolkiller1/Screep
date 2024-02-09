@@ -17,8 +17,6 @@ module.exports = {
 			return
 			}
 			
-			
-			
 			if (creep.pos.getRangeTo(spot) > 1) {
 				creep.moveTo(spot)
 			} else {

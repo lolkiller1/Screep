@@ -30,12 +30,13 @@ if (Game.time % 4 == 0) link2.transferEnergy(link1)
 tower.run(myTower)
 tower.run(myTower2)
 
+room.run("E5N57", {roaded:false})
 room.run("E6N58", {roaded:true})
 room.run("E6N57", {roaded:true})
 room.run("E7N58", {roaded:true})
 room.run("E7N57", {roaded:true})
-room.run("E8N57", {roaded:false})
-room.run("E8N59", {roaded:false})
+room.run("E8N57", {roaded:true})
+room.run("E8N59", {roaded:true})
 
 var spawn = Game.spawns["E5N57"]
 
@@ -129,6 +130,8 @@ for(const i in Memory.creeps) {
 	
 }
 
+/*
+
 var spawning = spawn.spawning != null
 
 if (!Game.creeps["name"] && !spawning) {
@@ -159,6 +162,7 @@ if (!Game.creeps["name3"] && !spawning) {
 	spawning = true
 
 }
+*/
 
 /*
 if (!Game.creeps["builder"] && !spawning) {
@@ -167,6 +171,8 @@ if (!Game.creeps["builder"] && !spawning) {
 
 }
 */
+
+/*
 
 if (!Game.creeps["tess"] && !spawning) {
 	util.spawnCreep("tess",  {m:12,w:10,c:2}, {status:"harvesting"}, 'E5N57')
@@ -203,18 +209,19 @@ if (!Game.creeps["dangerGather"] && !spawning) {
 	spawning = true
 }
 
-/*
+
 if (!Game.creeps["dangerGather2"] && !spawning) {
 	util.spawnCreep("dangerGather2", {c:15,m:15}, {status:"harvesting"},'E5N57')
 	spawning = true
 
 }
-*/
+
 
 if (!Game.creeps["waller"] && !spawning) {
 	util.spawnCreep("waller", {c:1,m:2,w:1}, {status:"harvesting"},'E5N57')
 	spawning = true
 }
+*/
 
 /*
 	---------
