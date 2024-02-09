@@ -43,6 +43,25 @@ module.exports = {
 			tower.run(towers[t], roads)
 		}
 		
+		if (roomLevel >= 4) {
+			var w = Game.creeps[roomName + "_Waller"]
+			if (w) {
+				waller.run(w, drops, ruins)
+			} else {
+				util.spawnCreep(roomName + "_Waller", {w:2,c:1,m:3},{status:"harvesting"},roomName)
+			}
+		}
+		
+		var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
+		if (constructionSpots.length > 0) {
+			var builder = Game.creeps[roomName + "_Builder"]
+			if (builder) {
+				roomUpgrader.build(builder, drops, ruins)
+			} else {
+				util.spawnCreep(roomName + "_Builder", room.energyAvailable >= 2300 ? {w:10,c:6,m:roaded ? 8 : 16} : room.energyCapacityAvailable >= 2300 || room.energyAvailable >= 1800 ? {w:7,c:5,m:roaded ? 6 : 12} : room.energyCapacityAvailable >= 1800 || room.energyAvailable >= 1300 ? {w:5,c:3,m:roaded ? 4 : 8} : room.energyAvailable >= 750 ? {w:3,c:2,m:5} : room.energyAvailable >= 500 ? {m:3,c:1,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+			} 
+		}
+		
 		var miner = Game.creeps[roomName + "_Miner"]
 		if (miner) {
 			if (miner.memory.source == null) {
@@ -57,16 +76,6 @@ module.exports = {
 			}
 		} else {
 			util.spawnCreep(roomName + "_Miner", room.energyCapacityAvailable >= 750 ? {w:5,m:roaded ? 3 : 5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
-		}
-		
-		var constructionSpots = room.find(FIND_MY_CONSTRUCTION_SITES)
-		if (constructionSpots.length > 0) {
-			var builder = Game.creeps[roomName + "_Builder"]
-			if (builder) {
-				roomUpgrader.build(builder, drops, ruins)
-			} else {
-				util.spawnCreep(roomName + "_Builder", room.energyAvailable >= 2300 ? {w:10,c:6,m:roaded ? 8 : 16} : room.energyCapacityAvailable >= 2300 || room.energyAvailable >= 1800 ? {w:7,c:5,m:roaded ? 6 : 12} : room.energyCapacityAvailable >= 1800 || room.energyAvailable >= 1300 ? {w:5,c:3,m:roaded ? 4 : 8} : room.energyAvailable >= 750 ? {w:3,c:2,m:5} : room.energyAvailable >= 500 ? {m:3,c:1,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
-			} 
 		}
 		
 		if (sources.length > 1) {
@@ -85,15 +94,6 @@ module.exports = {
 				}
 			} else {
 				util.spawnCreep(roomName + "_Miner2", room.energyCapacityAvailable >= 750 ? {w:5,m:roaded ? 3 : 5} : room.energyCapacityAvailable >= 500 ? {m:2,w:4} : {m:1,w:2},{status:"harvesting"},roomName)
-			}
-		}
-		
-		if (roomLevel >= 4) {
-			var w = Game.creeps[roomName + "_Waller"]
-			if (w) {
-				waller.run(w, drops, ruins)
-			} else {
-				util.spawnCreep(roomName + "_Waller", {w:2,c:1,m:3},{status:"harvesting"},roomName)
 			}
 		}
 		
