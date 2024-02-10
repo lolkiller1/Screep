@@ -9,7 +9,7 @@ module.exports = {
 				creep.moveTo(0,12)
 				return
 			}
-			if (creep.getRangeTo(creep.room.controller) > 1) {
+			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
 				creep.reserve(creep.room.controller)
@@ -20,7 +20,7 @@ module.exports = {
 				creep.moveTo(0,17)
 				return
 			}
-			if (creep.getRangeTo(creep.room.controller) > 1) {
+			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
 				creep.reserve(creep.room.controller)
@@ -34,7 +34,7 @@ module.exports = {
 				creep.moveTo(1,0)
 				return
 			}
-			if (creep.getRangeTo(creep.room.controller) > 1) {
+			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
 				creep.reserve(creep.room.controller)
@@ -44,7 +44,7 @@ module.exports = {
 				creep.moveTo(0,6)
 				return
 			}
-			if (creep.getRangeTo(creep.room.controller) > 1) {
+			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
 				creep.reserve(creep.room.controller)
