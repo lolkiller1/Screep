@@ -40,7 +40,7 @@ module.exports = {
 		return roads
 	},
 	getDrops(room) {
-		return drops = room.find(FIND_DROPPED_RESOURCES, {filter: function(e) {return e.resourceType == RESOURCE_ENERGY && e.amount > 250}})
+		return room.find(FIND_DROPPED_RESOURCES, {filter: function(e) {return e.resourceType == RESOURCE_ENERGY && e.amount > 250}})
 	},
 	getRuins(room) {
 		var ruins

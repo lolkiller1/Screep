@@ -39,8 +39,8 @@ module.exports = {
 		}
 	},
 	gather(creep, drops, ruins){
-		var drop
-		var ruin
+		var drop = false
+		var ruin = false
 		
 		if (ruins && ruins.length > 0) {
 			ruin = creep.pos.findClosestByPath(ruins)
