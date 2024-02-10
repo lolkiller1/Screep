@@ -68,7 +68,7 @@ module.exports = {
 			return
 		}
 		
-		if (creep.room.storage && creep.room.store && creep.room.store.getUsedCapacity(RESOURCE_ENERGY) > 5000) {
+		if (creep.room.storage && creep.room.storage.store && creep.room.store.getUsedCapacity(RESOURCE_ENERGY) > 5000) {
 			this.gatherFromStorage(creep)
 		} else {
 			this.gatherFromEnergy(creep)
