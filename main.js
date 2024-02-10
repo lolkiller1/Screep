@@ -47,7 +47,7 @@ for(const i in Memory.creeps) {
 }
 
 if (!Game.creeps["reserver"]) {
-		util.spawnCreep("reserver",  {claim:10,m:10}, {status:"harvesting"}, 'E5N57')
+		util.spawnCreep("reserver",  {claim:8,m:8}, {status:"harvesting"}, 'E5N57')
 	} else {
 		reserver.run(Game.creeps["reserver"])
  }
