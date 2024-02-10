@@ -83,6 +83,15 @@ module.exports = {
 		} else {
 			var spot = false
 			
+			if (creep.room.storage && creep.room.storage.getFreeCapacity(RESOURCE_ENERGY) > 800000) {
+				if (creep.pos.getRangeTo(creep.room.storage) > 3) {
+				creep.moveTo(creep.room.storage)
+			} else {
+				creep.transfer(creep.room.storage, RESOURCE_ENERGY)
+			}
+			return
+			}
+			
 			if (creep.pos.getRangeTo(creep.room.controller) > 3) {
 				creep.moveTo(creep.room.controller)
 			} else {
