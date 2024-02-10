@@ -51,6 +51,12 @@ if (!Game.creeps["reserver"]) {
 	} else {
 		reserver.run(Game.creeps["reserver"])
  }
+ 
+ if (!Game.creeps["attacker"]) {
+		util.spawnCreep("attacker",  {r:10,h:2,m:12}, {}, 'E5N57')
+	} else {
+		attacker.run(Game.creeps["attacker"])
+ }
 
 /*
 

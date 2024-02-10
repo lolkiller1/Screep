@@ -11,10 +11,10 @@ module.exports = {
 		}
 	
 		var enemy = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {filter: function(e){return e.pos.y < 7}})
-		var friendly = creep.pos.findClosestByRange(FIND_MY_CREEPS, {filter: function(e){return e.hits < e.hitsMax}})
+		var friendly = creep.pos.findClosestByRange(FIND_MY_CREEPS, {filter: function(e){return e.id != creep.id && e.hits < e.hitsMax && e.pos.getRangeTo(creep) <= 3}})
 		
 		if (friendly) {
-			creep.heal(friendly)
+			creep.rangedHeal(friendly)
 		} else if (creep.hits<creep.hitsMax) {
 			creep.heal(creep)
 		}
