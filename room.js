@@ -58,7 +58,7 @@ module.exports = {
 			if (builder) {
 				roomUpgrader.build(builder, drops, ruins)
 			} else {
-				util.spawnCreep(roomName + "_Builder", room.energyAvailable >= 2300 ? {w:10,c:6,m:roaded ? 8 : 16} : room.energyCapacityAvailable >= 2300 || room.energyAvailable >= 1800 ? {w:7,c:5,m:roaded ? 6 : 12} : room.energyCapacityAvailable >= 1800 || room.energyAvailable >= 1300 ? {w:5,c:3,m:roaded ? 4 : 8} : room.energyAvailable >= 750 ? {w:3,c:2,m:5} : room.energyAvailable >= 500 ? {m:3,c:1,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
+				util.spawnCreep(roomName + "_Builder", room.energyAvailable >= 4000 ? {w:14,c:6,m:roaded ? 10 : 20} : room.energyAvailable >= 2300 ? {w:10,c:6,m:roaded ? 8 : 16} : room.energyCapacityAvailable >= 2300 || room.energyAvailable >= 1800 ? {w:7,c:5,m:roaded ? 6 : 12} : room.energyCapacityAvailable >= 1800 || room.energyAvailable >= 1300 ? {w:5,c:3,m:roaded ? 4 : 8} : room.energyAvailable >= 750 ? {w:3,c:2,m:5} : room.energyAvailable >= 500 ? {m:3,c:1,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 			} 
 		}
 		
