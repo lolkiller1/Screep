@@ -1,7 +1,7 @@
 module.exports = {
 	run(creep){
 		
-		var hp = creep.hits < creep.hitsMax
+		var hp = creep.hits / creep.hitsMax
 		
 		
 		if (hp > .75) {
@@ -12,7 +12,7 @@ module.exports = {
 			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
-				creep.reserve(creep.room.controller)
+				creep.reserveController(creep.room.controller)
 			}
 			
 		} else if (hp > .5) {
@@ -23,7 +23,7 @@ module.exports = {
 			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
-				creep.reserve(creep.room.controller)
+				creep.reserveController(creep.room.controller)
 			}
 		} else if (hp > .25) {
 			if (creep.room.name == "E3N57") {
@@ -37,7 +37,7 @@ module.exports = {
 			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
-				creep.reserve(creep.room.controller)
+				creep.reserveController(creep.room.controller)
 			}
 		} else {
 			if (creep.room.name == "E4N58") {
@@ -47,7 +47,7 @@ module.exports = {
 			if (creep.pos.getRangeTo(creep.room.controller) > 1) {
 				creep.moveTo(creep.room.controller)
 			} else {
-				creep.reserve(creep.room.controller)
+				creep.reserveController(creep.room.controller)
 			}
 		}
 	}
