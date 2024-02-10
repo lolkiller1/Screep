@@ -34,7 +34,7 @@ module.exports = {
 		
 		var bonusCreep = Game.creeps[roomName + "_Bonus"]
 		if (bonusCreep) {
-			roomUpgrader.run3(bonusCreep, needyExtensions, drops, ruins)
+			roomUpgrader.run3(bonusCreep, needyExtensions, towers, drops, ruins)
 		} else if (bonus) {
 			util.spawnCreep(roomName + "_Bonus", room.energyAvailable >= 2300 ? {w:8,c:10,m:roaded ? 9 : 18} : room.energyAvailable >= 1800 ? {w:6,c:8,m:roaded ? 7 : 14} : room.energyAvailable >= 1300 ? {w:5,c:5,m:roaded ? 5 : 10} : room.energyAvailable >= 750 ? {c:3,m:6,w:3} : room.energyAvailable >= 500 ? {m:4,c:2,w:2} : {m:2,c:1,w:1},{status:"harvesting"},roomName)
 		}
