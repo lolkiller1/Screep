@@ -12,6 +12,7 @@ var outUpgrader3 = require("outUpgrader3")
 var attacker = require("attacker")
 var dangerMiner = require("dangerMiner")
 var waller = require("waller")
+var reserver = require("reserver")
 var room = require("room")
 var roomTask = require("roomTask")
 
@@ -19,16 +20,10 @@ if (Game.spawns["E5N57"].hits < Game.spawns["E5N57"].hitsMax) {
 	Game.getObjectById("5bbcad319099fc012e636ce9").activateSafeMode()
 }
 
-var myTower = Game.getObjectById("65ae09ade53e4a11e1675b1e")
-var myTower2 = Game.getObjectById("65b198c63d017d635f88c752")
-
 var link1 = Game.getObjectById("65bf22a6682254d4499b95d0")
 var link2 = Game.getObjectById("65bf2dcab1cdfc13c8096d3f")
 
 if (Game.time % 4 == 0) link2.transferEnergy(link1)
-
-tower.run(myTower)
-tower.run(myTower2)
 
 room.run("E5N57", {roaded:false})
 room.run("E6N58", {roaded:true})
@@ -38,13 +33,6 @@ room.run("E7N57", {roaded:true})
 room.run("E8N57", {roaded:true})
 room.run("E8N59", {roaded:true})
 
-var spawn = Game.spawns["E5N57"]
-
-var mainRoom = Game.rooms.E5N57
-roomTask.init(mainRoom)
-var towers = roomTask.getTowers(mainRoom)
-var extensions = roomTask.getExtensions(mainRoom)
-
 for(const i in Memory.creeps) {
 	try {
 		if (Game.creeps[i] == undefined) {
@@ -53,82 +41,16 @@ for(const i in Memory.creeps) {
 			}
 			continue
 		}
-		
-		var creep = Game.creeps[i]
-
-	if (creep.name == "tess" || creep.name == "tess2" || creep.name == "tess3") {
-			tess.run(creep)
-		}
-	
-		if (creep.name == "name" || creep.name == "name2") {
-			name.run(creep, extensions)
-		}
-		
-		if (creep.name == "builder") {
-			builder.run(creep)
-		}
-	
-		if (creep.name == "name3") {
-			filler.run(creep)
-		}
-		
-		if (creep.name == "miner1") {
-			miner.run(creep)
-		}
-		
-		if (creep.name == "miner2") {
-			miner.run(creep)
-		}
-		
-		if (creep.name == "claimer") {
-			claimer.run(creep)
-		}
-		
-		if (creep.name == "outUpgrader") {
-			outUpgrader.run(creep)
-		}
-		
-		if (creep.name == "outUpgrader2" || creep.name == "outUpgrader22" || creep.name == "outUpgrader23" || creep.name == "outUpgrader24" || creep.name == "outUpgrader3") {
-			outUpgrader2.run(creep)
-		}
-		
-		if (creep.name == "outUpgraderB") {
-			outUpgrader.build(creep)
-		}
-		
-		if (creep.name == "outUpgrader2B") {
-			outUpgrader2.build(creep)
-		}
-		
-		if (creep.name == "outUpgrader3B") {
-			outUpgrader3.build(creep)
-		}
-		
-		if (creep.name == "tempFiller") {
-			filler.run(creep)
-		}
-		
-		if (creep.name == "tessTheKiller" || creep.name == "tessTheKiller2") {
-			attacker.run(creep)
-		}
-		
-		if (creep.name == "dangerMiner" || creep.name == "dangerMiner2") {
-			dangerMiner.run(creep)
-		}
-		
-		if (creep.name == "dangerGather" || creep.name == "dangerGather2" || creep.name == "dangerGather3") {
-			dangerMiner.gather(creep, link2)
-		}
-		
-		if (creep.name == "waller") {
-			waller.run(creep)
-		}
-	
 	} catch (error) {
 		console.log("Error: " + error)
 	}
-	
 }
+
+if (!Game.creeps["reserver"]) {
+	util.spawnCreep("reserver",  {claim:12,m:12}, {status:"harvesting"}, 'E5N57')
+ else {
+	 reserver.run(Game.creeps["reserver"])
+ }
 
 /*
 
